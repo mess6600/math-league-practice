@@ -5,7 +5,7 @@ import { contestDate } from './data/meta.js'
 import { getProfile } from './data/profiles.js'
 import { getSession, login, logout } from './auth.js'
 import { loadProgress, progressStats, clearProgress } from './progress.js'
-import { visibleAdaptiveSets } from './coach/catalog.js'
+import { userCanAccessSet, visibleAdaptiveSets } from './coach/catalog.js'
 import { SKILLS } from './coach/skills.js'
 import { rankedSkills } from './coach/progressMath.js'
 import {
@@ -469,6 +469,7 @@ export default function App() {
   }
 
   function openSet(s) {
+    if (!userCanAccessSet(session.username, s)) return
     setActive(s)
     setTab('practice')
   }
@@ -541,7 +542,7 @@ export default function App() {
       )}
       {tab === 'mock' && !active && <MockContest onOpen={openSet} />}
       {tab === 'practice' && !active && (
-        <PracticePicker onPick={setActive} progress={progress} session={session} />
+        <PracticePicker onPick={openSet} progress={progress} session={session} />
       )}
       {active?.type === 'number-sense' && (
         <NumberSensePractice

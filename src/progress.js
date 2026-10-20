@@ -45,8 +45,8 @@ export function loadProgress(username) {
       progress.contentVersion = CONTENT_VERSION
     }
     ensureSkills(progress, username)
-    ensureTrackUnlocks(progress, username)
-    if (needsSave) saveProgress(username, progress)
+    const pruned = ensureTrackUnlocks(progress, username)
+    if (needsSave || pruned) saveProgress(username, progress)
     return progress
   } catch {
     const p = emptyProgress(username)
@@ -98,7 +98,7 @@ export function recordAttempt(username, attempt) {
 
   let newSet = null
   if (attempt.setData && attempt.responses && enoughWorkForUnlock(attempt.setData, attempt.responses)) {
-    const result = unlockAfterCompletion(progress, attempt.setData)
+    const result = unlockAfterCompletion(progress, attempt.setData, username)
     progress = result.progress
     newSet = result.newSet
     if (newSet) {

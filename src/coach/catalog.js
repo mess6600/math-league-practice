@@ -5,6 +5,7 @@ import { focusSets } from '../data/focusSets.js'
 /**
  * Practice tracks available in the app.
  * seedSetIds = first published set(s) that unlock level 1.
+ * forUsers lists exact login names only — never share one twin's focus with the other.
  */
 export const TRACKS = [
   {
@@ -12,7 +13,7 @@ export const TRACKS = [
     label: 'Estimation Lab',
     primarySkill: 'estimation',
     skills: ['estimation'],
-    forUsers: ['Amrit', '*'],
+    forUsers: ['Amrit'],
     seedSetIds: ['focus-amrit-estimate'],
   },
   {
@@ -20,7 +21,7 @@ export const TRACKS = [
     label: 'Sprint Mid',
     primarySkill: 'sprint_mid',
     skills: ['sprint_mid', 'sprint_accuracy'],
-    forUsers: ['Amrit', '*'],
+    forUsers: ['Amrit'],
     seedSetIds: ['focus-amrit-sprint-mid'],
   },
   {
@@ -28,7 +29,7 @@ export const TRACKS = [
     label: 'Harder Target',
     primarySkill: 'target_multistep',
     skills: ['target_multistep', 'ratios', 'geometry'],
-    forUsers: ['Amrit', '*'],
+    forUsers: ['Amrit'],
     seedSetIds: ['focus-amrit-target-hard'],
   },
   {
@@ -36,7 +37,7 @@ export const TRACKS = [
     label: 'Target Basics',
     primarySkill: 'target_basic',
     skills: ['target_basic', 'geometry'],
-    forUsers: ['Mohit', '*'],
+    forUsers: ['Mohit'],
     seedSetIds: ['focus-mohit-target-basics'],
   },
   {
@@ -53,7 +54,7 @@ export const TRACKS = [
     label: 'NS Clean Stretch',
     primarySkill: 'ns_stretch',
     skills: ['ns_stretch', 'ns_basic', 'estimation'],
-    forUsers: ['Mohit', '*'],
+    forUsers: ['Mohit'],
     seedSetIds: ['focus-mohit-ns-stretch'],
   },
   {
@@ -61,13 +62,29 @@ export const TRACKS = [
     label: 'Safe Sprint',
     primarySkill: 'sprint_accuracy',
     skills: ['sprint_accuracy', 'sprint_mid'],
-    forUsers: ['Mohit', '*'],
+    forUsers: ['Mohit'],
     seedSetIds: ['focus-mohit-sprint-safe'],
   },
 ]
 
 export function tracksForUser(username) {
-  return TRACKS.filter((t) => t.forUsers.includes(username) || t.forUsers.includes('*'))
+  return TRACKS.filter((t) => t.forUsers.includes(username))
+}
+
+/** Whether this login may open a focus / generated adaptive set. Shared drills are always ok. */
+export function userCanAccessSet(username, setData) {
+  if (!setData) return false
+  const id = String(setData.id || '')
+  const group = String(setData.group || '')
+  const isPersonalized =
+    id.startsWith('focus-') || group.startsWith('focus') || group === 'generated' || Boolean(setData.trackId)
+  if (!isPersonalized) return true
+
+  const mine = tracksForUser(username)
+  if (setData.trackId && mine.some((t) => t.id === setData.trackId)) return true
+  if (mine.some((t) => t.seedSetIds.includes(setData.id))) return true
+  if (group === `focus-${String(username).toLowerCase()}`) return true
+  return false
 }
 
 function genKey(track) {
@@ -76,10 +93,13 @@ function genKey(track) {
 
 /**
  * After a set is completed, unlock/generate the next level on that track.
+ * Only unlocks tracks that belong to this username.
  */
-export function unlockAfterCompletion(progress, completedSet) {
+export function unlockAfterCompletion(progress, completedSet, username) {
   if (!progress.unlocked) progress.unlocked = {}
   if (!progress.generatedSets) progress.generatedSets = {}
+
+  const allowed = new Set(tracksForUser(username).map((t) => t.id))
 
   // Match by trackId on generated sets or seed membership
   let matched =
@@ -88,7 +108,7 @@ export function unlockAfterCompletion(progress, completedSet) {
     TRACKS.find((t) => t.seedSetIds.includes(completedSet.id))
 
   if (!matched) {
-    // Infer from title prefixes
+    // Infer from title prefixes — still must be a track this user owns
     const title = completedSet.title || ''
     if (/estimation/i.test(title)) matched = TRACKS.find((t) => t.id === 'estimation')
     else if (/safe sprint/i.test(title)) matched = TRACKS.find((t) => t.id === 'sprint-safe')
@@ -99,7 +119,7 @@ export function unlockAfterCompletion(progress, completedSet) {
     else if (/ns clean stretch/i.test(title)) matched = TRACKS.find((t) => t.id === 'ns-stretch')
   }
 
-  if (!matched) return { progress, newSet: null }
+  if (!matched || !allowed.has(matched.id)) return { progress, newSet: null }
 
   const curLevel = completedSet.level || (matched.seedSetIds.includes(completedSet.id) ? 1 : 1)
   const nextLevel = Math.max(curLevel + 1, (progress.unlocked[matched.id] || 1) + 1)
@@ -128,8 +148,21 @@ export function unlockAfterCompletion(progress, completedSet) {
 export function ensureTrackUnlocks(progress, username) {
   if (!progress.unlocked) progress.unlocked = {}
   if (!progress.generatedSets) progress.generatedSets = {}
-  for (const t of tracksForUser(username)) {
+  const mine = tracksForUser(username)
+  const mineIds = new Set(mine.map((t) => t.id))
+  for (const t of mine) {
     if (progress.unlocked[t.id] == null) progress.unlocked[t.id] = 1
+  }
+  // Drop another user's tracks / generated sets left over from the old shared '*' bug
+  for (const key of Object.keys(progress.unlocked)) {
+    if (!mineIds.has(key)) delete progress.unlocked[key]
+  }
+  for (const [id, s] of Object.entries(progress.generatedSets)) {
+    if (s?.trackId && !mineIds.has(s.trackId)) delete progress.generatedSets[id]
+  }
+  if (progress.lastUnlock?.setId && !progress.generatedSets[progress.lastUnlock.setId]) {
+    const seedOk = mine.some((t) => t.seedSetIds.includes(progress.lastUnlock.setId))
+    if (!seedOk) progress.lastUnlock = null
   }
   return progress
 }

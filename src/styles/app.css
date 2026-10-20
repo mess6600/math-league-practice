@@ -57,6 +57,76 @@ button, input {
   animation: rise 0.7s ease-out both;
 }
 
+.hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.logout-btn {
+  background: rgba(255,255,255,0.14) !important;
+  color: #f4f7f5 !important;
+  border-color: rgba(255,255,255,0.28) !important;
+  flex-shrink: 0;
+}
+
+.login-panel {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.field input {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.7rem 0.85rem;
+  background: white;
+  color: var(--ink);
+}
+
+.login-error {
+  color: var(--bad);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.history-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.history-list li {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr 1fr 0.9fr;
+  gap: 0.4rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 0.92rem;
+  align-items: baseline;
+}
+
+.history-list .muted {
+  color: var(--ink-soft);
+}
+
+@media (max-width: 700px) {
+  .history-list li {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .hero::after {
   content: '';
   position: absolute;

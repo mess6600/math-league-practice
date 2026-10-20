@@ -167,9 +167,11 @@ export function NumberSensePractice({ setData, onBack, username, onSaved, onStar
         )
       })}
       {!scored && (
-        <div className="submit-bar">
-          <button type="button" className="btn btn-primary submit-btn" onClick={score}>Submit</button>
-          <span className="submit-hint">See what’s right/wrong, save progress, unlock more practice</span>
+        <div className="submit-bar finish-bar">
+          <button type="button" className="btn btn-coral submit-btn" onClick={score}>
+            Finish &amp; score
+          </button>
+          <span className="submit-hint">Ends this whole set — shows right/wrong and saves progress</span>
         </div>
       )}
       {scored && (
@@ -293,9 +295,11 @@ export function SprintPractice({ setData, onBack, username, onSaved, onStartUnlo
         )
       })}
       {!scored && (
-        <div className="submit-bar">
-          <button type="button" className="btn btn-primary submit-btn" onClick={score}>Submit</button>
-          <span className="submit-hint">See what’s right/wrong, save progress, unlock more practice</span>
+        <div className="submit-bar finish-bar">
+          <button type="button" className="btn btn-coral submit-btn" onClick={score}>
+            Finish &amp; score
+          </button>
+          <span className="submit-hint">Ends this whole set — shows right/wrong and saves progress</span>
         </div>
       )}
       {scored && (
@@ -388,23 +392,68 @@ export function TargetPractice({ setData, onBack, username, onSaved, onStartUnlo
       <p className="lead">Calculator OK · 6 minutes per pair · +10 each · no penalty</p>
 
       {!scored && (
-        <div className="pair-box">
-          <h3>Pair {pair.pair} of {setData.pairs.length}</h3>
-          {pair.questions.map((q) => (
-            <div className="problem" key={q.n}>
-              <span className="num">{q.n}.</span>
-              {q.q}
-              <div className="answer-row">
-                <input
-                  type="text"
-                  value={responses[q.n] || ''}
-                  onChange={(e) => setResponses((r) => ({ ...r, [q.n]: e.target.value }))}
-                  placeholder="Answer"
-                />
+        <>
+          <div className="pair-box">
+            <h3>Pair {pair.pair} of {setData.pairs.length}</h3>
+            {pair.questions.map((q) => (
+              <div className="problem" key={q.n}>
+                <span className="num">{q.n}.</span>
+                {q.q}
+                <div className="answer-row">
+                  <input
+                    type="text"
+                    value={responses[q.n] || ''}
+                    onChange={(e) => setResponses((r) => ({ ...r, [q.n]: e.target.value }))}
+                    placeholder="Answer"
+                  />
+                </div>
               </div>
+            ))}
+          </div>
+
+          <div className="nav-bar">
+            <button
+              type="button"
+              className="btn btn-ghost"
+              disabled={pairIndex === 0}
+              onClick={() => {
+                setPairIndex((i) => i - 1)
+                setRunning(true)
+              }}
+            >
+              ← Previous pair
+            </button>
+            {pairIndex < setData.pairs.length - 1 ? (
+              <button
+                type="button"
+                className="btn btn-primary submit-btn"
+                onClick={() => {
+                  setPairIndex((i) => i + 1)
+                  setRunning(true)
+                }}
+              >
+                Next pair →
+              </button>
+            ) : (
+              <button type="button" className="btn btn-coral submit-btn" onClick={score}>
+                Finish &amp; score
+              </button>
+            )}
+          </div>
+          <p className="submit-hint nav-hint">
+            {pairIndex < setData.pairs.length - 1
+              ? `This is pair ${pair.pair} of ${setData.pairs.length}. Use Next pair to keep going — don’t finish until the last pair.`
+              : 'Last pair — tap Finish & score when you’re done with all answers.'}
+          </p>
+          {pairIndex < setData.pairs.length - 1 && (
+            <div className="finish-bar subtle">
+              <button type="button" className="btn btn-ghost" onClick={score}>
+                Finish &amp; score early
+              </button>
+              <span className="submit-hint">Only if you want to end the whole Target set now</span>
             </div>
-          ))}
-        </div>
+          )}
+        </>
       )}
 
       {scored &&
@@ -432,12 +481,6 @@ export function TargetPractice({ setData, onBack, username, onSaved, onStartUnlo
           </div>
         ))}
 
-      {!scored && (
-        <div className="submit-bar">
-          <button type="button" className="btn btn-primary submit-btn" onClick={score}>Submit</button>
-          <span className="submit-hint">Scores all pairs, explains mistakes, unlocks more practice</span>
-        </div>
-      )}
       {scored && (
         <div className="score-banner">
           <strong>Score: {scored.total}</strong>

@@ -516,7 +516,9 @@ button, input {
   border-radius: 99px;
 }
 
-.submit-bar {
+.submit-bar,
+.nav-bar,
+.finish-bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -526,6 +528,22 @@ button, input {
   border-radius: 14px;
   background: rgba(15, 107, 92, 0.08);
   border: 1px solid var(--line);
+}
+
+.nav-bar {
+  background: rgba(15, 107, 92, 0.12);
+  justify-content: space-between;
+}
+
+.finish-bar.subtle {
+  background: transparent;
+  border-style: dashed;
+  margin-top: 0.65rem;
+  padding: 0.65rem 0.85rem;
+}
+
+.nav-hint {
+  margin: 0.55rem 0.2rem 0;
 }
 
 .submit-btn {

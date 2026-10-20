@@ -9,26 +9,26 @@ export const focusSets = [
     type: 'number-sense',
     group: 'focus-amrit',
     problems: [
-      { n: 1, q: '19 × 21', estimate: true },
-      { n: 2, q: '29 × 31', estimate: true },
-      { n: 3, q: '48 × 52', estimate: true },
-      { n: 4, q: '39 × 41', estimate: true },
-      { n: 5, q: '24 × 26', estimate: true },
-      { n: 6, q: '61 × 59', estimate: true },
-      { n: 7, q: '78 × 22', estimate: true },
-      { n: 8, q: '35 × 45', estimate: true },
-      { n: 9, q: '99 × 101', estimate: true },
-      { n: 10, q: '18 × 22', estimate: true },
-      { n: 11, q: '2.9 × 3.1', estimate: true },
-      { n: 12, q: '49 × 51', estimate: true },
-      { n: 13, q: '25 × 39', estimate: true },
-      { n: 14, q: '88 × 12', estimate: true },
-      { n: 15, q: '76 × 24', estimate: true },
-      { n: 16, q: '33 × 27', estimate: true },
-      { n: 17, q: '71 × 69', estimate: true },
-      { n: 18, q: '44 × 56', estimate: true },
-      { n: 19, q: '82 × 18', estimate: true },
-      { n: 20, q: '54 × 46', estimate: true },
+      { n: 1, q: 'Estimate 19 × 21.', estimate: true },
+      { n: 2, q: 'Estimate 29 × 31.', estimate: true },
+      { n: 3, q: 'Estimate 48 × 52.', estimate: true },
+      { n: 4, q: 'Estimate 39 × 41.', estimate: true },
+      { n: 5, q: 'Estimate 24 × 26.', estimate: true },
+      { n: 6, q: 'Estimate 61 × 59.', estimate: true },
+      { n: 7, q: 'Estimate 78 × 22.', estimate: true },
+      { n: 8, q: 'Estimate 35 × 45.', estimate: true },
+      { n: 9, q: 'Estimate 99 × 101.', estimate: true },
+      { n: 10, q: 'Estimate 18 × 22.', estimate: true },
+      { n: 11, q: 'Estimate 2.9 × 3.1.', estimate: true },
+      { n: 12, q: 'Estimate 49 × 51.', estimate: true },
+      { n: 13, q: 'Estimate 25 × 39.', estimate: true },
+      { n: 14, q: 'Estimate 88 × 12.', estimate: true },
+      { n: 15, q: 'Estimate 76 × 24.', estimate: true },
+      { n: 16, q: 'Estimate 33 × 27.', estimate: true },
+      { n: 17, q: 'Estimate 71 × 69.', estimate: true },
+      { n: 18, q: 'Estimate 44 × 56.', estimate: true },
+      { n: 19, q: 'Estimate 82 × 18.', estimate: true },
+      { n: 20, q: 'Estimate 54 × 46.', estimate: true },
     ],
   },
   {
@@ -52,7 +52,7 @@ export const focusSets = [
       },
       {
         n: 2,
-        q: 'A rectangle is 9 by 4. Perimeter?',
+        q: 'A rectangle is 9 units long and 4 units wide. What is its perimeter?',
         options: [
           { key: 'A', text: '13' },
           { key: 'B', text: '26' },
@@ -74,7 +74,7 @@ export const focusSets = [
       },
       {
         n: 4,
-        q: 'LCM of 4 and 6?',
+        q: 'What is the least common multiple (LCM) of 4 and 6?',
         options: [
           { key: 'A', text: '12' },
           { key: 'B', text: '24' },
@@ -85,7 +85,7 @@ export const focusSets = [
       },
       {
         n: 5,
-        q: '6² − 5² =',
+        q: 'What is the value of 6² − 5²?',
         options: [
           { key: 'A', text: '1' },
           { key: 'B', text: '11' },
@@ -96,7 +96,7 @@ export const focusSets = [
       },
       {
         n: 6,
-        q: 'If you are not sure, what should you do on Sprint?',
+        q: 'If you are not sure of an answer on the Sprint round, what should you do?',
         options: [
           { key: 'A', text: 'Guess quickly' },
           { key: 'B', text: 'Skip (0 points)' },
@@ -107,7 +107,7 @@ export const focusSets = [
       },
       {
         n: 7,
-        q: 'Mean of 4, 8, 10, 6?',
+        q: 'What is the mean (average) of the numbers 4, 8, 10, and 6?',
         options: [
           { key: 'A', text: '6' },
           { key: 'B', text: '7' },
@@ -118,7 +118,7 @@ export const focusSets = [
       },
       {
         n: 8,
-        q: 'A number divisible by 9: which?',
+        q: 'Which of these numbers is divisible by 9?',
         options: [
           { key: 'A', text: '124' },
           { key: 'B', text: '216' },
@@ -129,7 +129,7 @@ export const focusSets = [
       },
       {
         n: 9,
-        q: '2/3 of 24 =',
+        q: 'What is two-thirds of 24?',
         options: [
           { key: 'A', text: '8' },
           { key: 'B', text: '12' },
@@ -140,7 +140,7 @@ export const focusSets = [
       },
       {
         n: 10,
-        q: 'Angle sum in a triangle?',
+        q: 'What is the sum of the interior angles in a triangle?',
         options: [
           { key: 'A', text: '90°' },
           { key: 'B', text: '180°' },
@@ -151,7 +151,7 @@ export const focusSets = [
       },
       {
         n: 11,
-        q: 'How many cm in 2.5 m?',
+        q: 'How many centimeters are in 2.5 meters?',
         options: [
           { key: 'A', text: '25' },
           { key: 'B', text: '250' },
@@ -162,7 +162,7 @@ export const focusSets = [
       },
       {
         n: 12,
-        q: 'GCF of 18 and 24?',
+        q: 'What is the greatest common factor (GCF) of 18 and 24?',
         options: [
           { key: 'A', text: '3' },
           { key: 'B', text: '6' },
@@ -173,7 +173,7 @@ export const focusSets = [
       },
       {
         n: 13,
-        q: 'Movie starts 2:45, lasts 1 hr 40 min. Ends?',
+        q: 'A movie starts at 2:45 and lasts 1 hour and 40 minutes. What time does it end?',
         options: [
           { key: 'A', text: '3:45' },
           { key: 'B', text: '4:15' },
@@ -184,7 +184,7 @@ export const focusSets = [
       },
       {
         n: 14,
-        q: 'Simplify 18/24',
+        q: 'Simplify the fraction 18/24 to lowest terms.',
         options: [
           { key: 'A', text: '3/4' },
           { key: 'B', text: '2/3' },
@@ -195,7 +195,7 @@ export const focusSets = [
       },
       {
         n: 15,
-        q: '3 pencils cost $1.50. Cost of 1?',
+        q: 'Three pencils cost $1.50 in total. What is the cost of one pencil?',
         options: [
           { key: 'A', text: '$0.30' },
           { key: 'B', text: '$0.45' },
@@ -245,11 +245,11 @@ export const focusSets = [
         questions: [
           {
             n: 5,
-            q: 'Ratio of boys to girls is 3:5 in a class of 32. How many girls?',
+            q: 'In a class of 32 students, the ratio of boys to girls is 3:5. How many girls are in the class?',
           },
           {
             n: 6,
-            q: 'A cube has surface area 150. What is the length of one edge? (Answer may be a square root simplified, or decimal.)',
+            q: 'A cube has a surface area of 150 square units. What is the length of one edge?',
           },
         ],
       },
@@ -258,11 +258,11 @@ export const focusSets = [
         questions: [
           {
             n: 7,
-            q: 'Train travels 55 mph for 2.4 hours. How many miles?',
+            q: 'A train travels at 55 miles per hour for 2.4 hours. How many miles does it travel?',
           },
           {
             n: 8,
-            q: 'Product of two numbers is 84. GCF is 4. LCM is? (Use GCF × LCM = product.)',
+            q: 'The product of two numbers is 84, and their greatest common factor is 4. What is their least common multiple?',
           },
         ],
       },
@@ -278,31 +278,31 @@ export const focusSets = [
     type: 'number-sense',
     group: 'focus-mohit',
     problems: [
-      { n: 1, q: '14 + 27', estimate: false },
-      { n: 2, q: '80 − 36', estimate: false },
-      { n: 3, q: '9 × 6', estimate: false },
-      { n: 4, q: '56 ÷ 7', estimate: false },
-      { n: 5, q: '12 × 5', estimate: false },
-      { n: 6, q: '100 − 45', estimate: false },
-      { n: 7, q: '8 × 7', estimate: false },
-      { n: 8, q: '½ of 64', estimate: false },
-      { n: 9, q: '3 × 4 × 5', estimate: false },
-      { n: 10, q: '19 × 21', estimate: true },
-      { n: 11, q: '15 + 18', estimate: false },
-      { n: 12, q: '72 ÷ 8', estimate: false },
-      { n: 13, q: '11 × 6', estimate: false },
-      { n: 14, q: '200 − 75', estimate: false },
-      { n: 15, q: '¼ of 48', estimate: false },
-      { n: 16, q: '7 × 9', estimate: false },
-      { n: 17, q: '0.5 × 20', estimate: false },
-      { n: 18, q: '9²', estimate: false },
-      { n: 19, q: '6 × 8 + 4', estimate: false },
-      { n: 20, q: '29 × 31', estimate: true },
-      { n: 21, q: '3 + 4 × 5', estimate: false },
-      { n: 22, q: '(3 + 4) × 5', estimate: false },
-      { n: 23, q: '25% of 40', estimate: false },
-      { n: 24, q: '10% of 90', estimate: false },
-      { n: 25, q: 'Remainder 47 ÷ 5', estimate: false },
+      { n: 1, q: 'What is 14 + 27?', estimate: false },
+      { n: 2, q: 'What is 80 − 36?', estimate: false },
+      { n: 3, q: 'What is 9 × 6?', estimate: false },
+      { n: 4, q: 'What is 56 ÷ 7?', estimate: false },
+      { n: 5, q: 'What is 12 × 5?', estimate: false },
+      { n: 6, q: 'What is 100 − 45?', estimate: false },
+      { n: 7, q: 'What is 8 × 7?', estimate: false },
+      { n: 8, q: 'What is ½ of 64?', estimate: false },
+      { n: 9, q: 'What is 3 × 4 × 5?', estimate: false },
+      { n: 10, q: 'Estimate 19 × 21.', estimate: true },
+      { n: 11, q: 'What is 15 + 18?', estimate: false },
+      { n: 12, q: 'What is 72 ÷ 8?', estimate: false },
+      { n: 13, q: 'What is 11 × 6?', estimate: false },
+      { n: 14, q: 'What is 200 − 75?', estimate: false },
+      { n: 15, q: 'What is ¼ of 48?', estimate: false },
+      { n: 16, q: 'What is 7 × 9?', estimate: false },
+      { n: 17, q: 'What is 0.5 × 20?', estimate: false },
+      { n: 18, q: 'What is 9²?', estimate: false },
+      { n: 19, q: 'What is 6 × 8 + 4?', estimate: false },
+      { n: 20, q: 'Estimate 29 × 31.', estimate: true },
+      { n: 21, q: 'What is 3 + 4 × 5?', estimate: false },
+      { n: 22, q: 'What is (3 + 4) × 5?', estimate: false },
+      { n: 23, q: 'What is 25% of 40?', estimate: false },
+      { n: 24, q: 'What is 10% of 90?', estimate: false },
+      { n: 25, q: 'What is the remainder when 47 is divided by 5?', estimate: false },
     ],
   },
   {
@@ -318,11 +318,11 @@ export const focusSets = [
         questions: [
           {
             n: 1,
-            q: 'A bakery sold 36 muffins morning and 24 afternoon. Sold in boxes of 12 — how many full boxes?',
+            q: 'A bakery sold 36 muffins in the morning and 24 muffins in the afternoon. The muffins are packed in boxes of 12. How many full boxes were sold in all?',
           },
           {
             n: 2,
-            q: 'Three consecutive whole numbers sum to 54. What is the largest?',
+            q: 'Three consecutive whole numbers add up to 54. What is the largest of the three numbers?',
           },
         ],
       },
@@ -331,11 +331,11 @@ export const focusSets = [
         questions: [
           {
             n: 3,
-            q: 'Rectangle length 15 cm, width 6 cm. Area in square cm?',
+            q: 'A rectangle has a length of 15 cm and a width of 6 cm. What is its area in square centimeters?',
           },
           {
             n: 4,
-            q: 'Ran 2 km, 3 km, and 4 km over 3 days. Mean km per day?',
+            q: 'Sam ran 2 km on Monday, 3 km on Tuesday, and 4 km on Wednesday. What was his average distance per day, in kilometers?',
           },
         ],
       },
@@ -344,11 +344,11 @@ export const focusSets = [
         questions: [
           {
             n: 5,
-            q: 'School has 200 students. 30% play a sport. How many play a sport?',
+            q: 'A school has 200 students, and 30% of them play a sport. How many students play a sport?',
           },
           {
             n: 6,
-            q: 'Square perimeter is 36. What is one side length?',
+            q: 'A square has a perimeter of 36. What is the length of one side?',
           },
         ],
       },
@@ -357,11 +357,11 @@ export const focusSets = [
         questions: [
           {
             n: 7,
-            q: 'Adult tickets $7, child $4. Buy 2 adult + 3 child. Total dollars?',
+            q: 'Adult tickets cost $7 each and child tickets cost $4 each. If a family buys 2 adult tickets and 3 child tickets, what is the total cost in dollars?',
           },
           {
             n: 8,
-            q: 'Product of two numbers is 56. One is 7. What is the other?',
+            q: 'The product of two numbers is 56. One of the numbers is 7. What is the other number?',
           },
         ],
       },
@@ -380,11 +380,11 @@ export const focusSets = [
         questions: [
           {
             n: 1,
-            q: 'Tank holds 40 liters and is 3/4 full. How many liters are in it?',
+            q: 'A tank holds 40 liters when full and is currently three-fourths full. How many liters of water are in the tank?',
           },
           {
             n: 2,
-            q: 'Positive difference between 12² and 8²?',
+            q: 'What is the positive difference between 12² and 8²?',
           },
         ],
       },
@@ -393,11 +393,11 @@ export const focusSets = [
         questions: [
           {
             n: 3,
-            q: 'Pizza cut into 10 slices. Three friends eat 2 each. Fraction left (lowest terms)?',
+            q: 'A pizza is cut into 10 equal slices. Three friends each eat 2 slices. What fraction of the pizza is left? Write your answer in lowest terms.',
           },
           {
             n: 4,
-            q: 'Regular pentagon perimeter 45 cm. One side length?',
+            q: 'A regular pentagon has a perimeter of 45 cm. What is the length of one side?',
           },
         ],
       },
@@ -406,11 +406,11 @@ export const focusSets = [
         questions: [
           {
             n: 5,
-            q: 'Books $10 each, notebooks $2 each. Buy 3 books and 4 notebooks. Total dollars?',
+            q: 'Books cost $10 each and notebooks cost $2 each. If you buy 3 books and 4 notebooks, what is the total cost in dollars?',
           },
           {
             n: 6,
-            q: 'A number is doubled, then 9 is added. Result is 31. Original number?',
+            q: 'A number is doubled, and then 9 is added. The result is 31. What was the original number?',
           },
         ],
       },
@@ -419,11 +419,11 @@ export const focusSets = [
         questions: [
           {
             n: 7,
-            q: 'Car travels 40 mph for 2.5 hours. Miles traveled?',
+            q: 'A car travels at 40 miles per hour for 2.5 hours. How many miles does it travel?',
           },
           {
             n: 8,
-            q: 'Class of 24, boys:girls = 1:2. How many girls?',
+            q: 'A class has 24 students, and the ratio of boys to girls is 1:2. How many girls are in the class?',
           },
         ],
       },
@@ -439,7 +439,7 @@ export const focusSets = [
     problems: [
       {
         n: 1,
-        q: '48 ÷ 6 =',
+        q: 'What is 48 ÷ 6?',
         options: [
           { key: 'A', text: '6' },
           { key: 'B', text: '7' },
@@ -450,7 +450,7 @@ export const focusSets = [
       },
       {
         n: 2,
-        q: '15 × 4 =',
+        q: 'What is 15 × 4?',
         options: [
           { key: 'A', text: '45' },
           { key: 'B', text: '50' },
@@ -461,7 +461,7 @@ export const focusSets = [
       },
       {
         n: 3,
-        q: 'Which equals 0.5?',
+        q: 'Which of the following is equal to 0.5?',
         options: [
           { key: 'A', text: '1/5' },
           { key: 'B', text: '2/5' },
@@ -472,7 +472,7 @@ export const focusSets = [
       },
       {
         n: 4,
-        q: '3² + 4² =',
+        q: 'What is the value of 3² + 4²?',
         options: [
           { key: 'A', text: '12' },
           { key: 'B', text: '25' },
@@ -483,7 +483,7 @@ export const focusSets = [
       },
       {
         n: 5,
-        q: 'Minutes in 2½ hours?',
+        q: 'How many minutes are there in 2½ hours?',
         options: [
           { key: 'A', text: '120' },
           { key: 'B', text: '130' },
@@ -494,7 +494,7 @@ export const focusSets = [
       },
       {
         n: 6,
-        q: 'Multiple of both 3 and 5?',
+        q: 'Which number is a multiple of both 3 and 5?',
         options: [
           { key: 'A', text: '10' },
           { key: 'B', text: '12' },
@@ -505,7 +505,7 @@ export const focusSets = [
       },
       {
         n: 7,
-        q: '100 − 37 =',
+        q: 'What is 100 − 37?',
         options: [
           { key: 'A', text: '63' },
           { key: 'B', text: '67' },
@@ -516,7 +516,7 @@ export const focusSets = [
       },
       {
         n: 8,
-        q: '25% of 60?',
+        q: 'What is 25% of 60?',
         options: [
           { key: 'A', text: '12' },
           { key: 'B', text: '15' },
@@ -527,7 +527,7 @@ export const focusSets = [
       },
       {
         n: 9,
-        q: 'If unsure on Sprint, best move?',
+        q: 'If you are unsure of an answer on the Sprint round, what is the best thing to do?',
         options: [
           { key: 'A', text: 'Guess' },
           { key: 'B', text: 'Skip' },
@@ -538,7 +538,7 @@ export const focusSets = [
       },
       {
         n: 10,
-        q: 'Area of square side 7?',
+        q: 'What is the area of a square with side length 7?',
         options: [
           { key: 'A', text: '14' },
           { key: 'B', text: '28' },
@@ -549,7 +549,7 @@ export const focusSets = [
       },
       {
         n: 11,
-        q: 'Next: 3, 6, 12, 24, ___?',
+        q: 'What is the next number in this pattern: 3, 6, 12, 24, …?',
         options: [
           { key: 'A', text: '30' },
           { key: 'B', text: '36' },
@@ -560,7 +560,7 @@ export const focusSets = [
       },
       {
         n: 12,
-        q: 'Hexagon sides?',
+        q: 'How many sides does a hexagon have?',
         options: [
           { key: 'A', text: '5' },
           { key: 'B', text: '6' },

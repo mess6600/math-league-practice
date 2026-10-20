@@ -46,14 +46,14 @@ const FOCUS_EXPLAIN = {
     ])
   ),
   'focus-mohit-target-basics': {
-    1: '(36+24)÷12 = 60÷12 = 5 boxes.',
-    2: 'Three consecutive sum to 54 → middle 18; largest 19.',
-    3: 'Area = 15×6 = 90.',
-    4: 'Mean = (2+3+4)÷3 = 3.',
-    5: '30% of 200 = 60.',
-    6: 'Perimeter 36 → side 36÷4 = 9.',
-    7: '2×7 + 3×4 = 14+12 = 26.',
-    8: '56÷7 = 8.',
+    1: 'Add the muffins: 36 + 24 = 60. Then divide by 12 muffins per box: 60 ÷ 12 = 5 boxes.',
+    2: 'Three consecutive numbers that add to 54 have a middle number of 54 ÷ 3 = 18. So the numbers are 17, 18, and 19. The largest is 19.',
+    3: 'Area of a rectangle = length × width = 15 × 6 = 90 square centimeters.',
+    4: 'Average = total distance ÷ number of days = (2 + 3 + 4) ÷ 3 = 9 ÷ 3 = 3 km per day.',
+    5: '30% of 200 = 0.30 × 200 = 60 students.',
+    6: 'A square has 4 equal sides. Side length = perimeter ÷ 4 = 36 ÷ 4 = 9.',
+    7: 'Adult tickets: 2 × $7 = $14. Child tickets: 3 × $4 = $12. Total: $14 + $12 = $26.',
+    8: 'If one number is 7 and the product is 56, the other number is 56 ÷ 7 = 8.',
   },
   'focus-mohit-target-build': {
     1: '¾ of 40 = 30 liters.',

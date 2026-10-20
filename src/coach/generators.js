@@ -34,7 +34,7 @@ export function generateEstimationSet({ level = 2, seed = Date.now() }) {
     const [a, b, exact] = nearSquarePair(rng)
     problems.push({
       n: i,
-      q: `${a} × ${b}`,
+      q: `Estimate ${a} × ${b}.`,
       estimate: true,
       skill: 'estimation',
     })
@@ -76,29 +76,29 @@ export function generateNsStretchSet({ level = 2, seed = Date.now() }) {
 
     if (kind === 'est') {
       const [a, b, exact] = nearSquarePair(rng)
-      q = `${a} × ${b}`
+      q = `Estimate ${a} × ${b}.`
       ans = String(exact)
       skill = 'estimation'
-      exp = `Estimate: exact ${exact}. Within 5% is OK.`
+      exp = `The exact product is ${exact}. On Number Sense, any integer within 5% of ${exact} is accepted.`
       problems.push({ n: i, q, estimate: true, skill })
     } else if (kind === 'add') {
       const a = irand(rng, 15, 90)
       const b = irand(rng, 15, 90)
-      q = `${a} + ${b}`
+      q = `What is ${a} + ${b}?`
       ans = String(a + b)
       exp = `${a} + ${b} = ${a + b}.`
       problems.push({ n: i, q, estimate: false, skill })
     } else if (kind === 'sub') {
       const a = irand(rng, 40, 200)
       const b = irand(rng, 10, a - 5)
-      q = `${a} − ${b}`
+      q = `What is ${a} − ${b}?`
       ans = String(a - b)
       exp = `${a} − ${b} = ${a - b}.`
       problems.push({ n: i, q, estimate: false, skill })
     } else if (kind === 'mul') {
       const a = irand(rng, 6, 12)
       const b = irand(rng, 6, 15)
-      q = `${a} × ${b}`
+      q = `What is ${a} × ${b}?`
       ans = String(a * b)
       exp = `${a} × ${b} = ${a * b}.`
       problems.push({ n: i, q, estimate: false, skill })
@@ -106,20 +106,20 @@ export function generateNsStretchSet({ level = 2, seed = Date.now() }) {
       const b = irand(rng, 4, 12)
       const qn = irand(rng, 4, 12)
       const a = b * qn
-      q = `${a} ÷ ${b}`
+      q = `What is ${a} ÷ ${b}?`
       ans = String(qn)
       exp = `${a} ÷ ${b} = ${qn}.`
       problems.push({ n: i, q, estimate: false, skill })
     } else if (kind === 'half') {
       const a = irand(rng, 10, 50) * 2
-      q = `½ of ${a}`
+      q = `What is one-half of ${a}?`
       ans = String(a / 2)
       skill = 'fractions'
       exp = `Half of ${a} is ${a / 2}.`
       problems.push({ n: i, q, estimate: false, skill })
     } else if (kind === 'pct') {
       const a = pick(rng, [40, 50, 60, 80, 100, 200])
-      q = `25% of ${a}`
+      q = `What is 25% of ${a}?`
       ans = String(a / 4)
       skill = 'fractions'
       exp = `25% means ÷4. ${a} ÷ 4 = ${a / 4}.`
@@ -127,7 +127,7 @@ export function generateNsStretchSet({ level = 2, seed = Date.now() }) {
     } else {
       const a = irand(rng, 2, 8)
       const b = irand(rng, 2, 9)
-      q = `${a} + ${b} × 3`
+      q = `What is the value of ${a} + ${b} × 3?`
       ans = String(a + b * 3)
       skill = 'order_ops'
       exp = `Multiply first: ${b}×3=${b * 3}, then +${a} = ${a + b * 3}.`
@@ -168,7 +168,7 @@ const SPRINT_BANK = [
       const c = irand(rng, 2, 9)
       const ans = a * b - c
       return {
-        q: `${a} × ${b} − ${c} =`,
+        q: `What is the value of ${a} × ${b} − ${c}?`,
         answer: 'B',
         options: [
           { key: 'A', text: String(ans - 6) },
@@ -188,7 +188,7 @@ const SPRINT_BANK = [
       const w = irand(rng, 3, 10)
       const peri = 2 * (l + w)
       return {
-        q: `Rectangle ${l} by ${w}. Perimeter?`,
+        q: `A rectangle is ${l} units long and ${w} units wide. What is its perimeter?`,
         answer: 'B',
         options: [
           { key: 'A', text: String(l + w) },
@@ -207,7 +207,7 @@ const SPRINT_BANK = [
       const whole = pick(rng, [24, 30, 36, 48])
       const ans = (whole * 2) / 3
       return {
-        q: `⅔ of ${whole} =`,
+        q: `What is two-thirds of ${whole}?`,
         answer: 'C',
         options: [
           { key: 'A', text: String(whole / 3) },
@@ -240,7 +240,7 @@ const SPRINT_BANK = [
     make: (rng) => {
       const a = irand(rng, 5, 12)
       return {
-        q: `${a}² − ${(a - 1)}² =`,
+        q: `What is the value of ${a}² − ${(a - 1)}²?`,
         answer: 'B',
         options: [
           { key: 'A', text: '1' },
@@ -307,13 +307,13 @@ function targetPair(rng, level) {
     const a = boxes * irand(rng, 1, 4)
     return [
       {
-        q: `A bakery sold ${m} muffins in the morning and ${a} in the afternoon. Boxes hold ${boxes}. How many full boxes in all?`,
+        q: `A bakery sold ${m} muffins in the morning and ${a} muffins in the afternoon. The muffins are packed in boxes of ${boxes}. How many full boxes were sold in all?`,
         answer: String((m + a) / boxes),
         explain: `Total muffins ${m + a}. Divide by ${boxes} → ${(m + a) / boxes} boxes.`,
         skill: 'target_basic',
       },
       {
-        q: `Rectangle length ${l} cm and width ${w} cm. What is the area in square cm?`,
+        q: `A rectangle has a length of ${l} cm and a width of ${w} cm. What is its area in square centimeters?`,
         answer: String(area),
         explain: `Area = length × width = ${l}×${w} = ${area}.`,
         skill: 'geometry',
@@ -326,13 +326,13 @@ function targetPair(rng, level) {
   const fifth = avg * 5 - four.reduce((s, x) => s + x, 0)
   return [
     {
-      q: `Average of five scores is ${avg}. Four scores are ${four.join(', ')}. What is the fifth?`,
+      q: `The average of five test scores is ${avg}. Four of the scores are ${four.join(', ')}. What is the fifth score?`,
       answer: String(fifth),
       explain: `Five scores sum to ${avg}×5=${avg * 5}. Subtract the four known scores (${four.reduce((s, x) => s + x, 0)}) → fifth = ${fifth}.`,
       skill: 'ratios',
     },
     {
-      q: `${pct}% of ${base} is?`,
+      q: `What is ${pct}% of ${base}?`,
       answer: String(pctAns),
       explain: `${pct}% of ${base} = ${pct}/100 × ${base} = ${pctAns}.`,
       skill: 'fractions',

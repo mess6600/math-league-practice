@@ -2,6 +2,7 @@ import { ensureSkills, applySkillResults } from './coach/progressMath.js'
 import { ensureTrackUnlocks, unlockAfterCompletion, enoughWorkForUnlock } from './coach/catalog.js'
 
 const PREFIX = 'mlp:progress:'
+const CONTENT_VERSION = 2 // bump to refresh generated question wording
 
 function emptyProgress(username) {
   return {
@@ -13,6 +14,7 @@ function emptyProgress(username) {
     unlocked: {},
     generatedSets: {},
     lastUnlock: null,
+    contentVersion: CONTENT_VERSION,
   }
 }
 
@@ -35,8 +37,16 @@ export function loadProgress(username) {
       unlocked: data.unlocked || {},
       generatedSets: data.generatedSets || {},
     }
+    // Drop stale auto-generated sets when question wording is updated
+    const needsSave = progress.contentVersion !== CONTENT_VERSION
+    if (needsSave) {
+      progress.generatedSets = {}
+      progress.lastUnlock = null
+      progress.contentVersion = CONTENT_VERSION
+    }
     ensureSkills(progress, username)
     ensureTrackUnlocks(progress, username)
+    if (needsSave) saveProgress(username, progress)
     return progress
   } catch {
     const p = emptyProgress(username)

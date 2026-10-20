@@ -131,7 +131,7 @@ function formatWhen(iso) {
 }
 
 function LoginScreen({ onLogin }) {
-  const [username, setUsername] = useState('Amrit')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
@@ -160,6 +160,7 @@ function LoginScreen({ onLogin }) {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             autoComplete="username"
+            placeholder="Amrit or Mohit"
             required
           />
         </label>
@@ -712,7 +713,7 @@ export default function App() {
           Signed in as <strong>{session.displayName}</strong> — countdown to {contestDate}.
         </p>
         <div className="hero-meta">
-          <span className="chip">Twin 1 · {session.displayName}</span>
+          <span className="chip">Twin {session.twin} · {session.displayName}</span>
           <span className="chip">Contest · Nov 14</span>
           <span className="chip">Progress saved on this device</span>
         </div>

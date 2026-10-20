@@ -6,6 +6,12 @@ export const USERS = [
     displayName: 'Amrit',
     twin: 1,
   },
+  {
+    username: 'Mohit',
+    password: '2020',
+    displayName: 'Mohit',
+    twin: 2,
+  },
 ]
 
 const SESSION_KEY = 'mlp:session'

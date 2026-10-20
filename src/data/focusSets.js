@@ -5,7 +5,7 @@ export const focusSets = [
     id: 'focus-amrit-estimate',
     trackId: 'estimation',
     level: 1,
-    title: 'Amrit · Estimation Lab',
+    title: 'Estimation Lab',
     type: 'number-sense',
     group: 'focus-amrit',
     problems: [
@@ -35,7 +35,7 @@ export const focusSets = [
     id: 'focus-amrit-sprint-mid',
     trackId: 'sprint-mid',
     level: 1,
-    title: 'Amrit · Sprint Mid (skip practice)',
+    title: 'Sprint Mid (skip practice)',
     type: 'sprint',
     group: 'focus-amrit',
     problems: [
@@ -210,7 +210,7 @@ export const focusSets = [
     id: 'focus-amrit-target-hard',
     trackId: 'target-multi',
     level: 1,
-    title: 'Amrit · Harder Target Pairs',
+    title: 'Harder Target Pairs',
     type: 'target',
     group: 'focus-amrit',
     pairs: [
@@ -274,7 +274,7 @@ export const focusSets = [
     id: 'focus-mohit-ns-stretch',
     trackId: 'ns-stretch',
     level: 1,
-    title: 'Mohit · NS Clean Stretch',
+    title: 'NS Clean Stretch',
     type: 'number-sense',
     group: 'focus-mohit',
     problems: [
@@ -309,7 +309,7 @@ export const focusSets = [
     id: 'focus-mohit-target-basics',
     trackId: 'target-basic',
     level: 1,
-    title: 'Mohit · Target Basics',
+    title: 'Target Basics',
     type: 'target',
     group: 'focus-mohit',
     pairs: [
@@ -371,7 +371,7 @@ export const focusSets = [
     id: 'focus-mohit-target-build',
     trackId: 'target-multi-m',
     level: 1,
-    title: 'Mohit · Target Builder',
+    title: 'Target Builder',
     type: 'target',
     group: 'focus-mohit',
     pairs: [
@@ -433,7 +433,7 @@ export const focusSets = [
     id: 'focus-mohit-sprint-safe',
     trackId: 'sprint-safe',
     level: 1,
-    title: 'Mohit · Safe Sprint (accuracy first)',
+    title: 'Safe Sprint (accuracy first)',
     type: 'sprint',
     group: 'focus-mohit',
     problems: [

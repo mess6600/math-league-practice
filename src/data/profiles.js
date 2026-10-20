@@ -54,7 +54,7 @@ export const profiles = {
     ],
     schedule: [
       {
-        title: 'This week (Amrit focus)',
+        title: 'This week (your focus)',
         items: [
           'Daily 8 min: Estimation drill (focus set)',
           '2× week: Sprint mid set — practice skipping #6–15 style',
@@ -142,7 +142,7 @@ export const profiles = {
     ],
     schedule: [
       {
-        title: 'This week (Mohit focus)',
+        title: 'This week (your focus)',
         items: [
           'Daily: 1 Target pair (6 min) — highest priority',
           'Daily 8 min: NS stretch drill (no blanks in the middle)',

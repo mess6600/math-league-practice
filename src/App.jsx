@@ -488,6 +488,12 @@ function NumberSensePractice({ setData, onBack, username, onSaved }) {
           </div>
         )
       })}
+      <div className="submit-bar">
+        <button type="button" className="btn btn-primary submit-btn" onClick={score}>
+          Submit
+        </button>
+        <span className="submit-hint">Scores your answers and saves to your progress</span>
+      </div>
       {scored && (
         <div className="score-banner">
           <strong>Score: {scored.total}</strong>
@@ -592,6 +598,12 @@ function SprintPractice({ setData, onBack, username, onSaved }) {
           </div>
         )
       })}
+      <div className="submit-bar">
+        <button type="button" className="btn btn-primary submit-btn" onClick={score}>
+          Submit
+        </button>
+        <span className="submit-hint">Scores your answers and saves to your progress</span>
+      </div>
       {scored && (
         <div className="score-banner">
           <strong>Score: {scored.total}</strong>
@@ -690,6 +702,12 @@ function TargetPractice({ setData, onBack, username, onSaved }) {
             </div>
           </div>
         ))}
+      </div>
+      <div className="submit-bar">
+        <button type="button" className="btn btn-primary submit-btn" onClick={score}>
+          Submit
+        </button>
+        <span className="submit-hint">Scores all pairs and saves to your progress</span>
       </div>
       {scored && (
         <div className="score-banner">

@@ -1,9 +1,13 @@
 import { useEffect, useMemo, useState } from 'react'
-import { sets } from './data/sets.js'
+import { sets as baseSets } from './data/sets.js'
+import { focusSets } from './data/focusSets.js'
 import { answers } from './data/answers.js'
-import { contestDate, baseline } from './data/meta.js'
+import { contestDate } from './data/meta.js'
+import { getProfile } from './data/profiles.js'
 import { getSession, login, logout } from './auth.js'
 import { loadProgress, recordAttempt, progressStats, clearProgress } from './progress.js'
+
+const sets = [...focusSets, ...baseSets]
 
 const TABS = [
   { id: 'home', label: 'Home' },
@@ -183,44 +187,74 @@ function LoginScreen({ onLogin }) {
   )
 }
 
-function Home({ session, progress }) {
+function Home({ session, progress, onOpen }) {
   const stats = progressStats(progress)
+  const profile = getProfile(session.username)
+  const s = profile?.scores
+
   return (
     <div className="panel">
       <h2>Hi, {session.displayName}!</h2>
-      <p className="lead">
-        Ready for {contestDate}. Last meet baseline: Individual <strong>{baseline.individual}</strong>,
-        Target <strong>{baseline.target}</strong>, Sprint <strong>{baseline.sprint}</strong>,
-        Number Sense <strong>{baseline.numberSense}</strong>.
-      </p>
-      <div className="grid">
-        <div className="set-btn" style={{ cursor: 'default' }}>
-          <div className="kind">Your log</div>
-          <div className="name">{stats.attempts} attempts</div>
-          <div className="meta">{stats.setsTried} different sets tried</div>
-        </div>
-        <div className="set-btn" style={{ cursor: 'default' }}>
-          <div className="kind">Focus</div>
-          <div className="name">Number Sense stop-line</div>
-          <div className="meta">Accuracy before going deep</div>
-        </div>
-        <div className="set-btn" style={{ cursor: 'default' }}>
-          <div className="kind">Focus</div>
-          <div className="name">Sprint skipping</div>
-          <div className="meta">Wrong −1 · Skip 0</div>
-        </div>
-      </div>
+      {profile ? (
+        <>
+          <p className="lead">
+            From your last qualifier ({profile.meet}): Number Sense <strong>{s.numberSense}</strong> ({s.nsRank}),
+            Target <strong>{s.target}</strong> ({s.targetRank}), Sprint <strong>{s.sprint}</strong> ({s.sprintRank}),
+            Individual <strong>{s.individual}</strong> ({s.individualRank}).
+            Next contest: {contestDate}.
+          </p>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', marginTop: '1rem' }}>
+            Your focus (from that scoresheet)
+          </h3>
+          <div className="grid" style={{ marginBottom: '1rem' }}>
+            {profile.focus.map((f) => (
+              <button
+                key={f.title}
+                type="button"
+                className="set-btn"
+                onClick={() => {
+                  const set = sets.find((x) => x.id === f.sets[0])
+                  if (set) onOpen(set)
+                }}
+              >
+                <div className="kind">Start practice</div>
+                <div className="name">{f.title}</div>
+                <div className="meta">{f.why}</div>
+              </button>
+            ))}
+          </div>
+          <div className="grid">
+            <div className="set-btn" style={{ cursor: 'default' }}>
+              <div className="kind">Goals</div>
+              <div className="name">NS {profile.goals.numberSense}+ · Sprint {profile.goals.sprint}+</div>
+              <div className="meta">Target {profile.goals.target}+ · Ind {profile.goals.individual}+</div>
+            </div>
+            <div className="set-btn" style={{ cursor: 'default' }}>
+              <div className="kind">Your log</div>
+              <div className="name">{stats.attempts} attempts</div>
+              <div className="meta">{stats.setsTried} sets tried</div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <p className="lead">Ready for {contestDate}. Open Practice to begin.</p>
+      )}
     </div>
   )
 }
 
-function Schedule() {
+function Schedule({ session }) {
+  const profile = getProfile(session.username)
+  const blocks = profile?.schedule?.length ? profile.schedule : SCHEDULE
+
   return (
     <div className="panel">
-      <h2>Practice schedule</h2>
-      <p className="lead">Short daily sessions beat long cram nights. Contest: Saturday, Nov 14.</p>
+      <h2>{session.displayName}&apos;s schedule</h2>
+      <p className="lead">
+        Built from your Contest 12721 scoresheet. Contest day: Saturday, Nov 14.
+      </p>
       <div className="schedule">
-        {SCHEDULE.map((w) => (
+        {blocks.map((w) => (
           <div className="week" key={w.title}>
             <h3>{w.title}</h3>
             <ul>
@@ -230,6 +264,16 @@ function Schedule() {
             </ul>
           </div>
         ))}
+        {profile && (
+          <div className="week">
+            <h3>Shared calendar (both twins)</h3>
+            <ul>
+              {SCHEDULE.flatMap((w) => w.items.slice(0, 2)).slice(0, 6).map((it) => (
+                <li key={it}>{it}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   )
@@ -294,35 +338,62 @@ function ProgressPanel({ session, progress, onRefresh }) {
   )
 }
 
-function PracticePicker({ onPick, progress }) {
+function PracticePicker({ onPick, progress, session }) {
+  const profile = getProfile(session.username)
+  const focusGroup = session.username === 'Amrit' ? 'focus-amrit' : session.username === 'Mohit' ? 'focus-mohit' : null
+
   const groups = useMemo(() => {
-    const g = { drill: [], 'number-sense': [], sprint: [], target: [] }
-    for (const s of sets) g[s.group]?.push(s)
+    const g = {
+      focus: [],
+      drill: [],
+      'number-sense': [],
+      sprint: [],
+      target: [],
+    }
+    for (const s of sets) {
+      if (focusGroup && s.group === focusGroup) g.focus.push(s)
+      else if (s.group === 'drill') g.drill.push(s)
+      else if (s.group === 'number-sense') g['number-sense'].push(s)
+      else if (s.group === 'sprint') g.sprint.push(s)
+      else if (s.group === 'target') g.target.push(s)
+    }
     return g
-  }, [])
+  }, [focusGroup])
 
   const sections = [
+    focusGroup && {
+      key: 'focus',
+      title: `⭐ For you, ${session.displayName} (from last scoresheet)`,
+    },
     { key: 'drill', title: 'Number Sense Drills (8–10 min)' },
     { key: 'number-sense', title: 'Number Sense Sets (10 min)' },
     { key: 'sprint', title: 'Sprint Sets (40 min)' },
     { key: 'target', title: 'Target Sets (6 min × 4 pairs)' },
-  ]
+  ].filter(Boolean)
 
   return (
     <div className="panel">
       <h2>Choose a set</h2>
-      <p className="lead">Timers match contest rules. Scores save to your account when you hit Score.</p>
+      <p className="lead">
+        {profile
+          ? `Start with your starred focus sets — they target what the scoresheet showed.`
+          : `Timers match contest rules. Scores save when you hit Score.`}
+      </p>
       {sections.map((sec) => (
         <div key={sec.key} style={{ marginBottom: '1.25rem' }}>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', margin: '0 0 0.55rem' }}>
             {sec.title}
           </h3>
           <div className="grid">
-            {groups[sec.key].map((s) => {
+            {(groups[sec.key] || []).map((s) => {
               const best = progress.bestBySet?.[s.id]
+              const recommended = profile?.recommendedIds?.includes(s.id)
               return (
                 <button key={s.id} type="button" className="set-btn" onClick={() => onPick(s)}>
-                  <div className="kind">{s.type.replace('-', ' ')}</div>
+                  <div className="kind">
+                    {s.type.replace('-', ' ')}
+                    {recommended ? ' · recommended' : ''}
+                  </div>
                   <div className="name">{s.title}</div>
                   <div className="meta">
                     {s.type === 'number-sense' && `${s.problems.length} problems`}
@@ -741,14 +812,16 @@ export default function App() {
         ))}
       </nav>
 
-      {tab === 'home' && <Home session={session} progress={progress} />}
-      {tab === 'schedule' && <Schedule />}
+      {tab === 'home' && (
+        <Home session={session} progress={progress} onOpen={openSet} />
+      )}
+      {tab === 'schedule' && <Schedule session={session} />}
       {tab === 'progress' && (
         <ProgressPanel session={session} progress={progress} onRefresh={refreshProgress} />
       )}
       {tab === 'mock' && !active && <MockContest onOpen={openSet} />}
       {tab === 'practice' && !active && (
-        <PracticePicker onPick={setActive} progress={progress} />
+        <PracticePicker onPick={setActive} progress={progress} session={session} />
       )}
       {active?.type === 'number-sense' && (
         <NumberSensePractice

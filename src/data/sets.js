@@ -6,102 +6,102 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "17 + 28",
+        "q": "What is 17 + 28?",
         "estimate": false
       },
       {
         "n": 2,
-        "q": "90 \u2212 47",
+        "q": "What is 90 − 47?",
         "estimate": false
       },
       {
         "n": 3,
-        "q": "8 \u00d7 7",
+        "q": "What is 8 × 7?",
         "estimate": false
       },
       {
         "n": 4,
-        "q": "56 \u00f7 7",
+        "q": "What is 56 ÷ 7?",
         "estimate": false
       },
       {
         "n": 5,
-        "q": "15 + 15 + 15",
+        "q": "What is 15 + 15 + 15?",
         "estimate": false
       },
       {
         "n": 6,
-        "q": "100 \u2212 36",
+        "q": "What is 100 − 36?",
         "estimate": false
       },
       {
         "n": 7,
-        "q": "9 \u00d7 6",
+        "q": "What is 9 × 6?",
         "estimate": false
       },
       {
         "n": 8,
-        "q": "72 \u00f7 8",
+        "q": "What is 72 ÷ 8?",
         "estimate": false
       },
       {
         "n": 9,
-        "q": "25 + 35",
+        "q": "What is 25 + 35?",
         "estimate": false
       },
       {
         "n": 10,
-        "q": "19 \u00d7 21",
+        "q": "Estimate 19 × 21.",
         "estimate": true
       },
       {
         "n": 11,
-        "q": "12 \u00d7 11",
+        "q": "What is 12 × 11?",
         "estimate": false
       },
       {
         "n": 12,
-        "q": "144 \u00f7 12",
+        "q": "What is 144 ÷ 12?",
         "estimate": false
       },
       {
         "n": 13,
-        "q": "3\u00b2",
+        "q": "What is 3²?",
         "estimate": false
       },
       {
         "n": 14,
-        "q": "5\u00b2",
+        "q": "What is 5²?",
         "estimate": false
       },
       {
         "n": 15,
-        "q": "\u00bd of 48",
+        "q": "What is ½ of 48?",
         "estimate": false
       },
       {
         "n": 16,
-        "q": "\u00bc of 100",
+        "q": "What is ¼ of 100?",
         "estimate": false
       },
       {
         "n": 17,
-        "q": "2 \u00d7 3 \u00d7 4",
+        "q": "What is 2 × 3 × 4?",
         "estimate": false
       },
       {
         "n": 18,
-        "q": "200 \u2212 75",
+        "q": "What is 200 − 75?",
         "estimate": false
       },
       {
         "n": 19,
-        "q": "16 + 29",
+        "q": "What is 16 + 29?",
         "estimate": false
       },
       {
         "n": 20,
-        "q": "48 \u00d7 52",
+        "q": "Estimate 48 × 52.",
         "estimate": true
       }
     ],
@@ -114,102 +114,102 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "23 + 48",
+        "q": "What is 23 + 48?",
         "estimate": false
       },
       {
         "n": 2,
-        "q": "81 \u2212 29",
+        "q": "What is 81 − 29?",
         "estimate": false
       },
       {
         "n": 3,
-        "q": "7 \u00d7 8",
+        "q": "What is 7 × 8?",
         "estimate": false
       },
       {
         "n": 4,
-        "q": "63 \u00f7 9",
+        "q": "What is 63 ÷ 9?",
         "estimate": false
       },
       {
         "n": 5,
-        "q": "40 + 60 + 20",
+        "q": "What is 40 + 60 + 20?",
         "estimate": false
       },
       {
         "n": 6,
-        "q": "500 \u2212 275",
+        "q": "What is 500 − 275?",
         "estimate": false
       },
       {
         "n": 7,
-        "q": "6 \u00d7 12",
+        "q": "What is 6 × 12?",
         "estimate": false
       },
       {
         "n": 8,
-        "q": "96 \u00f7 8",
+        "q": "What is 96 ÷ 8?",
         "estimate": false
       },
       {
         "n": 9,
-        "q": "33 + 47",
+        "q": "What is 33 + 47?",
         "estimate": false
       },
       {
         "n": 10,
-        "q": "31 \u00d7 29",
+        "q": "Estimate 31 × 29.",
         "estimate": true
       },
       {
         "n": 11,
-        "q": "15 \u00d7 4",
+        "q": "What is 15 × 4?",
         "estimate": false
       },
       {
         "n": 12,
-        "q": "120 \u00f7 10",
+        "q": "What is 120 ÷ 10?",
         "estimate": false
       },
       {
         "n": 13,
-        "q": "4\u00b2",
+        "q": "What is 4²?",
         "estimate": false
       },
       {
         "n": 14,
-        "q": "6\u00b2",
+        "q": "What is 6²?",
         "estimate": false
       },
       {
         "n": 15,
-        "q": "\u2153 of 45",
+        "q": "What is ⅓ of 45?",
         "estimate": false
       },
       {
         "n": 16,
-        "q": "\u2155 of 60",
+        "q": "What is ⅕ of 60?",
         "estimate": false
       },
       {
         "n": 17,
-        "q": "5 \u00d7 5 \u00d7 2",
+        "q": "What is 5 × 5 × 2?",
         "estimate": false
       },
       {
         "n": 18,
-        "q": "1000 \u2212 350",
+        "q": "What is 1000 − 350?",
         "estimate": false
       },
       {
         "n": 19,
-        "q": "45 + 55",
+        "q": "What is 45 + 55?",
         "estimate": false
       },
       {
         "n": 20,
-        "q": "99 \u00d7 101",
+        "q": "Estimate 99 × 101.",
         "estimate": true
       }
     ],
@@ -222,52 +222,52 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "0.5 + 0.5",
+        "q": "What is 0.5 + 0.5?",
         "estimate": false
       },
       {
         "n": 2,
-        "q": "1.2 + 0.8",
+        "q": "What is 1.2 + 0.8?",
         "estimate": false
       },
       {
         "n": 3,
-        "q": "\u00be + \u00bc",
+        "q": "What is ¾ + ¼?",
         "estimate": false
       },
       {
         "n": 4,
-        "q": "\u2154 + \u2153",
+        "q": "What is ⅔ + ⅓?",
         "estimate": false
       },
       {
         "n": 5,
-        "q": "0.25 \u00d7 8",
+        "q": "What is 0.25 × 8?",
         "estimate": false
       },
       {
         "n": 6,
-        "q": "1.5 \u00d7 4",
+        "q": "What is 1.5 × 4?",
         "estimate": false
       },
       {
         "n": 7,
-        "q": "\u00bd + \u00bc",
+        "q": "What is ½ + ¼?",
         "estimate": false
       },
       {
         "n": 8,
-        "q": "0.1 \u00d7 70",
+        "q": "What is 0.1 × 70?",
         "estimate": false
       },
       {
         "n": 9,
-        "q": "3/5 of 50",
+        "q": "What is 3/5 of 50?",
         "estimate": false
       },
       {
         "n": 10,
-        "q": "2.9 \u00d7 3.1",
+        "q": "Estimate 2.9 × 3.1.",
         "estimate": true
       },
       {
@@ -282,42 +282,42 @@ export const sets = [
       },
       {
         "n": 13,
-        "q": "2.5 + 3.5",
+        "q": "What is 2.5 + 3.5?",
         "estimate": false
       },
       {
         "n": 14,
-        "q": "10 \u2212 3.25",
+        "q": "What is 10 − 3.25?",
         "estimate": false
       },
       {
         "n": 15,
-        "q": "\u2155 + \u2155",
+        "q": "⅕ + ⅕",
         "estimate": false
       },
       {
         "n": 16,
-        "q": "0.75 \u00d7 100",
+        "q": "What is 0.75 × 100?",
         "estimate": false
       },
       {
         "n": 17,
-        "q": "\u215b of 64",
+        "q": "⅛ of 64",
         "estimate": false
       },
       {
         "n": 18,
-        "q": "2\u2153 + 1\u2154",
+        "q": "What is 2⅓ + 1⅔?",
         "estimate": false
       },
       {
         "n": 19,
-        "q": "0.2 \u00d7 0.5",
+        "q": "What is 0.2 × 0.5?",
         "estimate": false
       },
       {
         "n": 20,
-        "q": "49 \u00d7 51",
+        "q": "Estimate 49 × 51.",
         "estimate": true
       }
     ],
@@ -330,102 +330,102 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "3 + 4 \u00d7 5",
+        "q": "What is 3 + 4 × 5?",
         "estimate": false
       },
       {
         "n": 2,
-        "q": "(3 + 4) \u00d7 5",
+        "q": "What is (3 + 4) × 5?",
         "estimate": false
       },
       {
         "n": 3,
-        "q": "20 \u2212 4 \u00d7 3",
+        "q": "What is 20 − 4 × 3?",
         "estimate": false
       },
       {
         "n": 4,
-        "q": "100 \u00f7 5 \u00d7 2",
+        "q": "What is 100 ÷ 5 × 2?",
         "estimate": false
       },
       {
         "n": 5,
-        "q": "8 \u00d7 7 + 6",
+        "q": "What is 8 × 7 + 6?",
         "estimate": false
       },
       {
         "n": 6,
-        "q": "9\u00b2 \u2212 1",
+        "q": "What is 9² − 1?",
         "estimate": false
       },
       {
         "n": 7,
-        "q": "15 \u00d7 3 \u2212 10",
+        "q": "What is 15 × 3 − 10?",
         "estimate": false
       },
       {
         "n": 8,
-        "q": "48 \u00f7 6 + 7",
+        "q": "What is 48 ÷ 6 + 7?",
         "estimate": false
       },
       {
         "n": 9,
-        "q": "2 \u00d7 2 \u00d7 2 \u00d7 2",
+        "q": "What is 2 × 2 × 2 × 2?",
         "estimate": false
       },
       {
         "n": 10,
-        "q": "25 \u00d7 39",
+        "q": "Estimate 25 × 39.",
         "estimate": true
       },
       {
         "n": 11,
-        "q": "17 \u00d7 5",
+        "q": "What is 17 × 5?",
         "estimate": false
       },
       {
         "n": 12,
-        "q": "13 \u00d7 4",
+        "q": "What is 13 × 4?",
         "estimate": false
       },
       {
         "n": 13,
-        "q": "200 \u00f7 25",
+        "q": "What is 200 ÷ 25?",
         "estimate": false
       },
       {
         "n": 14,
-        "q": "11\u00b2",
+        "q": "What is 11²?",
         "estimate": false
       },
       {
         "n": 15,
-        "q": "7 \u00d7 11",
+        "q": "What is 7 × 11?",
         "estimate": false
       },
       {
         "n": 16,
-        "q": "Remainder when 50 \u00f7 7",
+        "q": "Remainder when 50 ÷ 7",
         "estimate": false
       },
       {
         "n": 17,
-        "q": "Remainder when 100 \u00f7 9",
+        "q": "Remainder when 100 ÷ 9",
         "estimate": false
       },
       {
         "n": 18,
-        "q": "6 \u00d7 15",
+        "q": "What is 6 × 15?",
         "estimate": false
       },
       {
         "n": 19,
-        "q": "45 \u00f7 5 \u00d7 3",
+        "q": "What is 45 ÷ 5 × 3?",
         "estimate": false
       },
       {
         "n": 20,
-        "q": "78 \u00d7 22",
+        "q": "Estimate 78 × 22.",
         "estimate": true
       }
     ],
@@ -438,27 +438,27 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "10% of 80",
+        "q": "What is 10% of 80?",
         "estimate": false
       },
       {
         "n": 2,
-        "q": "50% of 64",
+        "q": "What is 50% of 64?",
         "estimate": false
       },
       {
         "n": 3,
-        "q": "25% of 200",
+        "q": "What is 25% of 200?",
         "estimate": false
       },
       {
         "n": 4,
-        "q": "20% of 150",
+        "q": "What is 20% of 150?",
         "estimate": false
       },
       {
         "n": 5,
-        "q": "5% of 60",
+        "q": "What is 5% of 60?",
         "estimate": false
       },
       {
@@ -468,72 +468,72 @@ export const sets = [
       },
       {
         "n": 7,
-        "q": "$10.00 \u2212 $4.25",
+        "q": "$10.00 − $4.25",
         "estimate": false
       },
       {
         "n": 8,
-        "q": "3 \u00d7 $1.25",
+        "q": "What is 3 × $1.25?",
         "estimate": false
       },
       {
         "n": 9,
-        "q": "75% of 40",
+        "q": "What is 75% of 40?",
         "estimate": false
       },
       {
         "n": 10,
-        "q": "19.8 \u00d7 5",
+        "q": "Estimate 19.8 × 5.",
         "estimate": true
       },
       {
         "n": 11,
-        "q": "1% of 500",
+        "q": "What is 1% of 500?",
         "estimate": false
       },
       {
         "n": 12,
-        "q": "100% of 37",
+        "q": "What is 100% of 37?",
         "estimate": false
       },
       {
         "n": 13,
-        "q": "Double 46",
+        "q": "What is double 46?",
         "estimate": false
       },
       {
         "n": 14,
-        "q": "Triple 15",
+        "q": "What is triple 15?",
         "estimate": false
       },
       {
         "n": 15,
-        "q": "Half of 90",
+        "q": "What is half of 90?",
         "estimate": false
       },
       {
         "n": 16,
-        "q": "$2.00 \u00d7 8",
+        "q": "$2.00 × 8",
         "estimate": false
       },
       {
         "n": 17,
-        "q": "40% of 50",
+        "q": "What is 40% of 50?",
         "estimate": false
       },
       {
         "n": 18,
-        "q": "15% of 200",
+        "q": "What is 15% of 200?",
         "estimate": false
       },
       {
         "n": 19,
-        "q": "$20 \u2212 $7.50",
+        "q": "$20 − $7.50",
         "estimate": false
       },
       {
         "n": 20,
-        "q": "9.9 \u00d7 9.9",
+        "q": "Estimate 9.9 × 9.9.",
         "estimate": true
       }
     ],
@@ -546,102 +546,102 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "14 \u00d7 6",
+        "q": "What is 14 × 6?",
         "estimate": false
       },
       {
         "n": 2,
-        "q": "85 \u2212 38",
+        "q": "What is 85 − 38?",
         "estimate": false
       },
       {
         "n": 3,
-        "q": "9 \u00d7 9",
+        "q": "What is 9 × 9?",
         "estimate": false
       },
       {
         "n": 4,
-        "q": "108 \u00f7 9",
+        "q": "What is 108 ÷ 9?",
         "estimate": false
       },
       {
         "n": 5,
-        "q": "41 \u00d7 39",
+        "q": "Estimate 41 × 39.",
         "estimate": true
       },
       {
         "n": 6,
-        "q": "16 \u00d7 5",
+        "q": "What is 16 × 5?",
         "estimate": false
       },
       {
         "n": 7,
-        "q": "7\u00b3 (7\u00d77\u00d77)",
+        "q": "What is 7³ (7×7×7)?",
         "estimate": false
       },
       {
         "n": 8,
-        "q": "250 + 175",
+        "q": "What is 250 + 175?",
         "estimate": false
       },
       {
         "n": 9,
-        "q": "64 \u00f7 4",
+        "q": "What is 64 ÷ 4?",
         "estimate": false
       },
       {
         "n": 10,
-        "q": "62 \u00d7 48",
+        "q": "Estimate 62 × 48.",
         "estimate": true
       },
       {
         "n": 11,
-        "q": "18 \u00d7 3",
+        "q": "What is 18 × 3?",
         "estimate": false
       },
       {
         "n": 12,
-        "q": "11 \u00d7 11",
+        "q": "What is 11 × 11?",
         "estimate": false
       },
       {
         "n": 13,
-        "q": "\u2157 of 100",
+        "q": "⅗ of 100",
         "estimate": false
       },
       {
         "n": 14,
-        "q": "0.4 \u00d7 25",
+        "q": "What is 0.4 × 25?",
         "estimate": false
       },
       {
         "n": 15,
-        "q": "201 \u00d7 49",
+        "q": "Estimate 201 × 49.",
         "estimate": true
       },
       {
         "n": 16,
-        "q": "8\u00b2 + 1",
+        "q": "What is 8² + 1?",
         "estimate": false
       },
       {
         "n": 17,
-        "q": "13 \u00d7 7",
+        "q": "What is 13 × 7?",
         "estimate": false
       },
       {
         "n": 18,
-        "q": "90 \u00f7 15",
+        "q": "What is 90 ÷ 15?",
         "estimate": false
       },
       {
         "n": 19,
-        "q": "2.5 \u00d7 8",
+        "q": "What is 2.5 × 8?",
         "estimate": false
       },
       {
         "n": 20,
-        "q": "76 \u00d7 24",
+        "q": "Estimate 76 × 24.",
         "estimate": true
       }
     ],
@@ -654,102 +654,102 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "19 + 31",
+        "q": "What is 19 + 31?",
         "estimate": false
       },
       {
         "n": 2,
-        "q": "70 \u2212 25",
+        "q": "What is 70 − 25?",
         "estimate": false
       },
       {
         "n": 3,
-        "q": "8 \u00d7 9",
+        "q": "What is 8 × 9?",
         "estimate": false
       },
       {
         "n": 4,
-        "q": "54 \u00f7 6",
+        "q": "What is 54 ÷ 6?",
         "estimate": false
       },
       {
         "n": 5,
-        "q": "12 \u00d7 12",
+        "q": "What is 12 × 12?",
         "estimate": false
       },
       {
         "n": 6,
-        "q": "\u00bc of 80",
+        "q": "What is ¼ of 80?",
         "estimate": false
       },
       {
         "n": 7,
-        "q": "3 \u00d7 25",
+        "q": "What is 3 × 25?",
         "estimate": false
       },
       {
         "n": 8,
-        "q": "100 \u2212 48",
+        "q": "What is 100 − 48?",
         "estimate": false
       },
       {
         "n": 9,
-        "q": "6\u00b2",
+        "q": "What is 6²?",
         "estimate": false
       },
       {
         "n": 10,
-        "q": "28 \u00d7 32",
+        "q": "Estimate 28 × 32.",
         "estimate": true
       },
       {
         "n": 11,
-        "q": "15% of 60",
+        "q": "What is 15% of 60?",
         "estimate": false
       },
       {
         "n": 12,
-        "q": "2.5 + 4.5",
+        "q": "What is 2.5 + 4.5?",
         "estimate": false
       },
       {
         "n": 13,
-        "q": "7 \u00d7 8",
+        "q": "What is 7 × 8?",
         "estimate": false
       },
       {
         "n": 14,
-        "q": "81 \u00f7 9",
+        "q": "What is 81 ÷ 9?",
         "estimate": false
       },
       {
         "n": 15,
-        "q": "\u00bd of 74",
+        "q": "What is ½ of 74?",
         "estimate": false
       },
       {
         "n": 16,
-        "q": "9 \u00d7 11",
+        "q": "What is 9 × 11?",
         "estimate": false
       },
       {
         "n": 17,
-        "q": "200 \u00f7 8",
+        "q": "What is 200 ÷ 8?",
         "estimate": false
       },
       {
         "n": 18,
-        "q": "4 \u00d7 4 \u00d7 4",
+        "q": "What is 4 × 4 × 4?",
         "estimate": false
       },
       {
         "n": 19,
-        "q": "33 + 67",
+        "q": "What is 33 + 67?",
         "estimate": false
       },
       {
         "n": 20,
-        "q": "55 \u00d7 45",
+        "q": "Estimate 55 × 45.",
         "estimate": true
       }
     ],
@@ -762,202 +762,202 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "24 + 37",
+        "q": "What is 24 + 37?",
         "estimate": false
       },
       {
         "n": 2,
-        "q": "91 \u2212 48",
+        "q": "What is 91 − 48?",
         "estimate": false
       },
       {
         "n": 3,
-        "q": "6 \u00d7 9",
+        "q": "What is 6 × 9?",
         "estimate": false
       },
       {
         "n": 4,
-        "q": "84 \u00f7 7",
+        "q": "What is 84 ÷ 7?",
         "estimate": false
       },
       {
         "n": 5,
-        "q": "13 \u00d7 5",
+        "q": "What is 13 × 5?",
         "estimate": false
       },
       {
         "n": 6,
-        "q": "200 \u2212 86",
+        "q": "What is 200 − 86?",
         "estimate": false
       },
       {
         "n": 7,
-        "q": "8\u00b2",
+        "q": "What is 8²?",
         "estimate": false
       },
       {
         "n": 8,
-        "q": "\u00bd of 96",
+        "q": "What is ½ of 96?",
         "estimate": false
       },
       {
         "n": 9,
-        "q": "3 \u00d7 4 \u00d7 5",
+        "q": "What is 3 × 4 × 5?",
         "estimate": false
       },
       {
         "n": 10,
-        "q": "21 \u00d7 19",
+        "q": "Estimate 21 × 19.",
         "estimate": true
       },
       {
         "n": 11,
-        "q": "17 + 28 + 5",
+        "q": "What is 17 + 28 + 5?",
         "estimate": false
       },
       {
         "n": 12,
-        "q": "72 \u00f7 9",
+        "q": "What is 72 ÷ 9?",
         "estimate": false
       },
       {
         "n": 13,
-        "q": "11 \u00d7 6",
+        "q": "What is 11 × 6?",
         "estimate": false
       },
       {
         "n": 14,
-        "q": "1000 \u2212 425",
+        "q": "What is 1000 − 425?",
         "estimate": false
       },
       {
         "n": 15,
-        "q": "\u00bc of 64",
+        "q": "What is ¼ of 64?",
         "estimate": false
       },
       {
         "n": 16,
-        "q": "7 \u00d7 12",
+        "q": "What is 7 × 12?",
         "estimate": false
       },
       {
         "n": 17,
-        "q": "0.5 \u00d7 18",
+        "q": "What is 0.5 × 18?",
         "estimate": false
       },
       {
         "n": 18,
-        "q": "15\u00b2",
+        "q": "What is 15²?",
         "estimate": false
       },
       {
         "n": 19,
-        "q": "9 \u00d7 8 \u2212 2",
+        "q": "What is 9 × 8 − 2?",
         "estimate": false
       },
       {
         "n": 20,
-        "q": "51 \u00d7 49",
+        "q": "Estimate 51 × 49.",
         "estimate": true
       },
       {
         "n": 21,
-        "q": "3 + 5 \u00d7 6",
+        "q": "What is 3 + 5 × 6?",
         "estimate": false
       },
       {
         "n": 22,
-        "q": "(3 + 5) \u00d7 6",
+        "q": "What is (3 + 5) × 6?",
         "estimate": false
       },
       {
         "n": 23,
-        "q": "25% of 80",
+        "q": "What is 25% of 80?",
         "estimate": false
       },
       {
         "n": 24,
-        "q": "10% of 250",
+        "q": "What is 10% of 250?",
         "estimate": false
       },
       {
         "n": 25,
-        "q": "Remainder: 47 \u00f7 5",
+        "q": "Remainder: 47 ÷ 5",
         "estimate": false
       },
       {
         "n": 26,
-        "q": "14 \u00d7 11",
+        "q": "What is 14 × 11?",
         "estimate": false
       },
       {
         "n": 27,
-        "q": "\u2154 of 45",
+        "q": "What is ⅔ of 45?",
         "estimate": false
       },
       {
         "n": 28,
-        "q": "2.5 \u00d7 6",
+        "q": "What is 2.5 × 6?",
         "estimate": false
       },
       {
         "n": 29,
-        "q": "12\u00b2",
+        "q": "What is 12²?",
         "estimate": false
       },
       {
         "n": 30,
-        "q": "38 \u00d7 42",
+        "q": "Estimate 38 × 42.",
         "estimate": true
       },
       {
         "n": 31,
-        "q": "5\u00b3",
+        "q": "What is 5³?",
         "estimate": false
       },
       {
         "n": 32,
-        "q": "180 \u00f7 12",
+        "q": "What is 180 ÷ 12?",
         "estimate": false
       },
       {
         "n": 33,
-        "q": "20% of 90",
+        "q": "What is 20% of 90?",
         "estimate": false
       },
       {
         "n": 34,
-        "q": "$5.00 \u2212 $1.75",
+        "q": "$5.00 − $1.75",
         "estimate": false
       },
       {
         "n": 35,
-        "q": "8 \u00d7 15",
+        "q": "What is 8 × 15?",
         "estimate": false
       },
       {
         "n": 36,
-        "q": "\u00be + \u215b",
+        "q": "¾ + ⅛",
         "estimate": false
       },
       {
         "n": 37,
-        "q": "16 \u00d7 4",
+        "q": "What is 16 × 4?",
         "estimate": false
       },
       {
         "n": 38,
-        "q": "99 + 101",
+        "q": "What is 99 + 101?",
         "estimate": false
       },
       {
         "n": 39,
-        "q": "6 \u00d7 7 + 8",
+        "q": "What is 6 × 7 + 8?",
         "estimate": false
       },
       {
         "n": 40,
-        "q": "29 \u00d7 31",
+        "q": "Estimate 29 × 31.",
         "estimate": true
       }
     ],
@@ -970,202 +970,202 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "36 + 49",
+        "q": "What is 36 + 49?",
         "estimate": false
       },
       {
         "n": 2,
-        "q": "80 \u2212 37",
+        "q": "What is 80 − 37?",
         "estimate": false
       },
       {
         "n": 3,
-        "q": "7 \u00d7 9",
+        "q": "What is 7 × 9?",
         "estimate": false
       },
       {
         "n": 4,
-        "q": "96 \u00f7 8",
+        "q": "What is 96 ÷ 8?",
         "estimate": false
       },
       {
         "n": 5,
-        "q": "16 \u00d7 5",
+        "q": "What is 16 × 5?",
         "estimate": false
       },
       {
         "n": 6,
-        "q": "300 \u2212 148",
+        "q": "What is 300 − 148?",
         "estimate": false
       },
       {
         "n": 7,
-        "q": "9\u00b2",
+        "q": "What is 9²?",
         "estimate": false
       },
       {
         "n": 8,
-        "q": "\u2153 of 72",
+        "q": "What is ⅓ of 72?",
         "estimate": false
       },
       {
         "n": 9,
-        "q": "2 \u00d7 5 \u00d7 6",
+        "q": "What is 2 × 5 × 6?",
         "estimate": false
       },
       {
         "n": 10,
-        "q": "24 \u00d7 26",
+        "q": "Estimate 24 × 26.",
         "estimate": true
       },
       {
         "n": 11,
-        "q": "45 + 55",
+        "q": "What is 45 + 55?",
         "estimate": false
       },
       {
         "n": 12,
-        "q": "63 \u00f7 7",
+        "q": "What is 63 ÷ 7?",
         "estimate": false
       },
       {
         "n": 13,
-        "q": "12 \u00d7 8",
+        "q": "What is 12 × 8?",
         "estimate": false
       },
       {
         "n": 14,
-        "q": "500 \u2212 275",
+        "q": "What is 500 − 275?",
         "estimate": false
       },
       {
         "n": 15,
-        "q": "\u2155 of 85",
+        "q": "What is ⅕ of 85?",
         "estimate": false
       },
       {
         "n": 16,
-        "q": "11 \u00d7 11",
+        "q": "What is 11 × 11?",
         "estimate": false
       },
       {
         "n": 17,
-        "q": "0.25 \u00d7 40",
+        "q": "What is 0.25 × 40?",
         "estimate": false
       },
       {
         "n": 18,
-        "q": "4\u00b3",
+        "q": "What is 4³?",
         "estimate": false
       },
       {
         "n": 19,
-        "q": "6 \u00d7 9 + 4",
+        "q": "What is 6 × 9 + 4?",
         "estimate": false
       },
       {
         "n": 20,
-        "q": "61 \u00d7 59",
+        "q": "Estimate 61 × 59.",
         "estimate": true
       },
       {
         "n": 21,
-        "q": "4 + 3 \u00d7 7",
+        "q": "What is 4 + 3 × 7?",
         "estimate": false
       },
       {
         "n": 22,
-        "q": "(4 + 3) \u00d7 7",
+        "q": "What is (4 + 3) × 7?",
         "estimate": false
       },
       {
         "n": 23,
-        "q": "50% of 126",
+        "q": "What is 50% of 126?",
         "estimate": false
       },
       {
         "n": 24,
-        "q": "5% of 200",
+        "q": "What is 5% of 200?",
         "estimate": false
       },
       {
         "n": 25,
-        "q": "Remainder: 58 \u00f7 9",
+        "q": "Remainder: 58 ÷ 9",
         "estimate": false
       },
       {
         "n": 26,
-        "q": "13 \u00d7 12",
+        "q": "What is 13 × 12?",
         "estimate": false
       },
       {
         "n": 27,
-        "q": "\u00be of 48",
+        "q": "What is ¾ of 48?",
         "estimate": false
       },
       {
         "n": 28,
-        "q": "1.5 \u00d7 14",
+        "q": "What is 1.5 × 14?",
         "estimate": false
       },
       {
         "n": 29,
-        "q": "13\u00b2",
+        "q": "What is 13²?",
         "estimate": false
       },
       {
         "n": 30,
-        "q": "35 \u00d7 45",
+        "q": "Estimate 35 × 45.",
         "estimate": true
       },
       {
         "n": 31,
-        "q": "2\u2075 (2\u00d72\u00d72\u00d72\u00d72)",
+        "q": "What is 2⁵ (2×2×2×2×2)?",
         "estimate": false
       },
       {
         "n": 32,
-        "q": "144 \u00f7 16",
+        "q": "What is 144 ÷ 16?",
         "estimate": false
       },
       {
         "n": 33,
-        "q": "40% of 75",
+        "q": "What is 40% of 75?",
         "estimate": false
       },
       {
         "n": 34,
-        "q": "$10 \u2212 $3.40",
+        "q": "$10 − $3.40",
         "estimate": false
       },
       {
         "n": 35,
-        "q": "9 \u00d7 15",
+        "q": "What is 9 × 15?",
         "estimate": false
       },
       {
         "n": 36,
-        "q": "\u215d \u2212 \u215b",
+        "q": "⅝ − ⅛",
         "estimate": false
       },
       {
         "n": 37,
-        "q": "25 \u00d7 4",
+        "q": "What is 25 × 4?",
         "estimate": false
       },
       {
         "n": 38,
-        "q": "150 + 250",
+        "q": "What is 150 + 250?",
         "estimate": false
       },
       {
         "n": 39,
-        "q": "8 \u00d7 8 \u2212 14",
+        "q": "What is 8 × 8 − 14?",
         "estimate": false
       },
       {
         "n": 40,
-        "q": "47 \u00d7 53",
+        "q": "Estimate 47 × 53.",
         "estimate": true
       }
     ],
@@ -1178,202 +1178,202 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "58 + 27",
+        "q": "What is 58 + 27?",
         "estimate": false
       },
       {
         "n": 2,
-        "q": "105 \u2212 66",
+        "q": "What is 105 − 66?",
         "estimate": false
       },
       {
         "n": 3,
-        "q": "8 \u00d7 8",
+        "q": "What is 8 × 8?",
         "estimate": false
       },
       {
         "n": 4,
-        "q": "108 \u00f7 9",
+        "q": "What is 108 ÷ 9?",
         "estimate": false
       },
       {
         "n": 5,
-        "q": "19 \u00d7 4",
+        "q": "What is 19 × 4?",
         "estimate": false
       },
       {
         "n": 6,
-        "q": "400 \u2212 199",
+        "q": "What is 400 − 199?",
         "estimate": false
       },
       {
         "n": 7,
-        "q": "10\u00b2",
+        "q": "What is 10²?",
         "estimate": false
       },
       {
         "n": 8,
-        "q": "\u215b of 96",
+        "q": "⅛ of 96",
         "estimate": false
       },
       {
         "n": 9,
-        "q": "4 \u00d7 3 \u00d7 5",
+        "q": "What is 4 × 3 × 5?",
         "estimate": false
       },
       {
         "n": 10,
-        "q": "33 \u00d7 27",
+        "q": "Estimate 33 × 27.",
         "estimate": true
       },
       {
         "n": 11,
-        "q": "22 + 39",
+        "q": "What is 22 + 39?",
         "estimate": false
       },
       {
         "n": 12,
-        "q": "81 \u00f7 9",
+        "q": "What is 81 ÷ 9?",
         "estimate": false
       },
       {
         "n": 13,
-        "q": "15 \u00d7 6",
+        "q": "What is 15 × 6?",
         "estimate": false
       },
       {
         "n": 14,
-        "q": "750 \u2212 300",
+        "q": "What is 750 − 300?",
         "estimate": false
       },
       {
         "n": 15,
-        "q": "\u2154 of 60",
+        "q": "What is ⅔ of 60?",
         "estimate": false
       },
       {
         "n": 16,
-        "q": "14 \u00d7 5",
+        "q": "What is 14 × 5?",
         "estimate": false
       },
       {
         "n": 17,
-        "q": "0.75 \u00d7 20",
+        "q": "What is 0.75 × 20?",
         "estimate": false
       },
       {
         "n": 18,
-        "q": "7\u00b2",
+        "q": "What is 7²?",
         "estimate": false
       },
       {
         "n": 19,
-        "q": "5 \u00d7 12 \u2212 9",
+        "q": "What is 5 × 12 − 9?",
         "estimate": false
       },
       {
         "n": 20,
-        "q": "71 \u00d7 69",
+        "q": "Estimate 71 × 69.",
         "estimate": true
       },
       {
         "n": 21,
-        "q": "10 \u2212 2 \u00d7 3",
+        "q": "What is 10 − 2 × 3?",
         "estimate": false
       },
       {
         "n": 22,
-        "q": "(10 \u2212 2) \u00d7 3",
+        "q": "What is (10 − 2) × 3?",
         "estimate": false
       },
       {
         "n": 23,
-        "q": "75% of 60",
+        "q": "What is 75% of 60?",
         "estimate": false
       },
       {
         "n": 24,
-        "q": "1% of 800",
+        "q": "What is 1% of 800?",
         "estimate": false
       },
       {
         "n": 25,
-        "q": "Remainder: 100 \u00f7 12",
+        "q": "Remainder: 100 ÷ 12",
         "estimate": false
       },
       {
         "n": 26,
-        "q": "16 \u00d7 6",
+        "q": "What is 16 × 6?",
         "estimate": false
       },
       {
         "n": 27,
-        "q": "\u2156 of 50",
+        "q": "⅖ of 50",
         "estimate": false
       },
       {
         "n": 28,
-        "q": "3.5 \u00d7 4",
+        "q": "What is 3.5 × 4?",
         "estimate": false
       },
       {
         "n": 29,
-        "q": "14\u00b2",
+        "q": "What is 14²?",
         "estimate": false
       },
       {
         "n": 30,
-        "q": "44 \u00d7 56",
+        "q": "Estimate 44 × 56.",
         "estimate": true
       },
       {
         "n": 31,
-        "q": "3\u2074 (3\u00d73\u00d73\u00d73)",
+        "q": "What is 3⁴ (3×3×3×3)?",
         "estimate": false
       },
       {
         "n": 32,
-        "q": "225 \u00f7 25",
+        "q": "What is 225 ÷ 25?",
         "estimate": false
       },
       {
         "n": 33,
-        "q": "30% of 70",
+        "q": "What is 30% of 70?",
         "estimate": false
       },
       {
         "n": 34,
-        "q": "$8.00 \u2212 $2.65",
+        "q": "$8.00 − $2.65",
         "estimate": false
       },
       {
         "n": 35,
-        "q": "12 \u00d7 15",
+        "q": "What is 12 × 15?",
         "estimate": false
       },
       {
         "n": 36,
-        "q": "\u215e \u2212 \u215c",
+        "q": "⅞ − ⅜",
         "estimate": false
       },
       {
         "n": 37,
-        "q": "18 \u00d7 5",
+        "q": "What is 18 × 5?",
         "estimate": false
       },
       {
         "n": 38,
-        "q": "250 + 175",
+        "q": "What is 250 + 175?",
         "estimate": false
       },
       {
         "n": 39,
-        "q": "9 \u00d7 6 + 11",
+        "q": "What is 9 × 6 + 11?",
         "estimate": false
       },
       {
         "n": 40,
-        "q": "82 \u00d7 18",
+        "q": "Estimate 82 × 18.",
         "estimate": true
       }
     ],
@@ -1386,202 +1386,202 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "47 + 38",
+        "q": "What is 47 + 38?",
         "estimate": false
       },
       {
         "n": 2,
-        "q": "92 \u2212 55",
+        "q": "What is 92 − 55?",
         "estimate": false
       },
       {
         "n": 3,
-        "q": "9 \u00d7 7",
+        "q": "What is 9 × 7?",
         "estimate": false
       },
       {
         "n": 4,
-        "q": "77 \u00f7 7",
+        "q": "What is 77 ÷ 7?",
         "estimate": false
       },
       {
         "n": 5,
-        "q": "18 \u00d7 5",
+        "q": "What is 18 × 5?",
         "estimate": false
       },
       {
         "n": 6,
-        "q": "600 \u2212 248",
+        "q": "What is 600 − 248?",
         "estimate": false
       },
       {
         "n": 7,
-        "q": "11\u00b2",
+        "q": "What is 11²?",
         "estimate": false
       },
       {
         "n": 8,
-        "q": "\u00bd of 150",
+        "q": "What is ½ of 150?",
         "estimate": false
       },
       {
         "n": 9,
-        "q": "5 \u00d7 5 \u00d7 4",
+        "q": "What is 5 × 5 × 4?",
         "estimate": false
       },
       {
         "n": 10,
-        "q": "39 \u00d7 41",
+        "q": "Estimate 39 × 41.",
         "estimate": true
       },
       {
         "n": 11,
-        "q": "34 + 66",
+        "q": "What is 34 + 66?",
         "estimate": false
       },
       {
         "n": 12,
-        "q": "56 \u00f7 8",
+        "q": "What is 56 ÷ 8?",
         "estimate": false
       },
       {
         "n": 13,
-        "q": "13 \u00d7 7",
+        "q": "What is 13 × 7?",
         "estimate": false
       },
       {
         "n": 14,
-        "q": "900 \u2212 455",
+        "q": "What is 900 − 455?",
         "estimate": false
       },
       {
         "n": 15,
-        "q": "\u215c of 40",
+        "q": "What is ⅜ of 40?",
         "estimate": false
       },
       {
         "n": 16,
-        "q": "16 \u00d7 3",
+        "q": "What is 16 × 3?",
         "estimate": false
       },
       {
         "n": 17,
-        "q": "0.2 \u00d7 45",
+        "q": "What is 0.2 × 45?",
         "estimate": false
       },
       {
         "n": 18,
-        "q": "8\u00b2",
+        "q": "What is 8²?",
         "estimate": false
       },
       {
         "n": 19,
-        "q": "7 \u00d7 9 \u2212 5",
+        "q": "What is 7 × 9 − 5?",
         "estimate": false
       },
       {
         "n": 20,
-        "q": "88 \u00d7 12",
+        "q": "Estimate 88 × 12.",
         "estimate": true
       },
       {
         "n": 21,
-        "q": "2 + 8 \u00d7 4",
+        "q": "What is 2 + 8 × 4?",
         "estimate": false
       },
       {
         "n": 22,
-        "q": "(2 + 8) \u00d7 4",
+        "q": "What is (2 + 8) × 4?",
         "estimate": false
       },
       {
         "n": 23,
-        "q": "20% of 180",
+        "q": "What is 20% of 180?",
         "estimate": false
       },
       {
         "n": 24,
-        "q": "15% of 80",
+        "q": "What is 15% of 80?",
         "estimate": false
       },
       {
         "n": 25,
-        "q": "Remainder: 73 \u00f7 8",
+        "q": "Remainder: 73 ÷ 8",
         "estimate": false
       },
       {
         "n": 26,
-        "q": "17 \u00d7 3",
+        "q": "What is 17 × 3?",
         "estimate": false
       },
       {
         "n": 27,
-        "q": "\u215a of 36",
+        "q": "⅚ of 36",
         "estimate": false
       },
       {
         "n": 28,
-        "q": "2.25 \u00d7 4",
+        "q": "What is 2.25 × 4?",
         "estimate": false
       },
       {
         "n": 29,
-        "q": "15\u00b2",
+        "q": "What is 15²?",
         "estimate": false
       },
       {
         "n": 30,
-        "q": "65 \u00d7 35",
+        "q": "Estimate 65 × 35.",
         "estimate": true
       },
       {
         "n": 31,
-        "q": "4\u00b3",
+        "q": "What is 4³?",
         "estimate": false
       },
       {
         "n": 32,
-        "q": "160 \u00f7 8",
+        "q": "What is 160 ÷ 8?",
         "estimate": false
       },
       {
         "n": 33,
-        "q": "60% of 90",
+        "q": "What is 60% of 90?",
         "estimate": false
       },
       {
         "n": 34,
-        "q": "$6.00 \u2212 $2.35",
+        "q": "$6.00 − $2.35",
         "estimate": false
       },
       {
         "n": 35,
-        "q": "11 \u00d7 15",
+        "q": "What is 11 × 15?",
         "estimate": false
       },
       {
         "n": 36,
-        "q": "\u215a \u2212 \u2159",
+        "q": "⅚ − ⅙",
         "estimate": false
       },
       {
         "n": 37,
-        "q": "20 \u00d7 6",
+        "q": "What is 20 × 6?",
         "estimate": false
       },
       {
         "n": 38,
-        "q": "125 + 275",
+        "q": "What is 125 + 275?",
         "estimate": false
       },
       {
         "n": 39,
-        "q": "8 \u00d7 9 + 7",
+        "q": "What is 8 × 9 + 7?",
         "estimate": false
       },
       {
         "n": 40,
-        "q": "54 \u00d7 46",
+        "q": "Estimate 54 × 46.",
         "estimate": true
       }
     ],
@@ -1594,7 +1594,7 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "What is 48 \u00f7 6?",
+        "q": "What is 48 ÷ 6?",
         "options": [
           {
             "key": "A",
@@ -1620,7 +1620,7 @@ export const sets = [
       },
       {
         "n": 2,
-        "q": "15 \u00d7 4 =",
+        "q": "What is 15 × 4?",
         "options": [
           {
             "key": "A",
@@ -1698,7 +1698,7 @@ export const sets = [
       },
       {
         "n": 5,
-        "q": "What is the value of 3\u00b2 + 4\u00b2?",
+        "q": "What is the value of 3² + 4²?",
         "options": [
           {
             "key": "A",
@@ -1724,7 +1724,7 @@ export const sets = [
       },
       {
         "n": 6,
-        "q": "How many minutes are in 2\u00bd hours?",
+        "q": "How many minutes are in 2½ hours?",
         "options": [
           {
             "key": "A",
@@ -1750,7 +1750,7 @@ export const sets = [
       },
       {
         "n": 7,
-        "q": "Which number is a multiple of both 3 and 5?",
+        "q": "Which of these numbers is a multiple of both 3 and 5?",
         "options": [
           {
             "key": "A",
@@ -1776,7 +1776,7 @@ export const sets = [
       },
       {
         "n": 8,
-        "q": "100 \u2212 37 =",
+        "q": "What is 100 − 37?",
         "options": [
           {
             "key": "A",
@@ -1880,7 +1880,7 @@ export const sets = [
       },
       {
         "n": 12,
-        "q": "Which is greatest?",
+        "q": "Which of these numbers is the greatest?",
         "options": [
           {
             "key": "A",
@@ -1958,7 +1958,7 @@ export const sets = [
       },
       {
         "n": 15,
-        "q": "\u2154 of 24 =",
+        "q": "What is the value of ⅔ of 24?",
         "options": [
           {
             "key": "A",
@@ -2036,7 +2036,7 @@ export const sets = [
       },
       {
         "n": 18,
-        "q": "Area of a square with side 7?",
+        "q": "What is the area of a square with side length 7?",
         "options": [
           {
             "key": "A",
@@ -2062,7 +2062,7 @@ export const sets = [
       },
       {
         "n": 19,
-        "q": "8 \u00d7 7 \u2212 6 =",
+        "q": "What is the value of 8 × 7 − 6?",
         "options": [
           {
             "key": "A",
@@ -2088,7 +2088,7 @@ export const sets = [
       },
       {
         "n": 20,
-        "q": "Which is a prime number?",
+        "q": "Which of these numbers is prime?",
         "options": [
           {
             "key": "A",
@@ -2166,7 +2166,7 @@ export const sets = [
       },
       {
         "n": 23,
-        "q": "Mean of 4, 8, 10, 6?",
+        "q": "What is the mean (average) of the numbers 4, 8, 10, 6?",
         "options": [
           {
             "key": "A",
@@ -2244,7 +2244,7 @@ export const sets = [
       },
       {
         "n": 26,
-        "q": "What is 2\u00b3 \u00d7 3?",
+        "q": "What is 2³ × 3?",
         "options": [
           {
             "key": "A",
@@ -2296,23 +2296,23 @@ export const sets = [
       },
       {
         "n": 28,
-        "q": "Angle measures in a triangle add to?",
+        "q": "What do the angle measures in a triangle add up to?",
         "options": [
           {
             "key": "A",
-            "text": "90\u00b0"
+            "text": "90°"
           },
           {
             "key": "B",
-            "text": "180\u00b0"
+            "text": "180°"
           },
           {
             "key": "C",
-            "text": "270\u00b0"
+            "text": "270°"
           },
           {
             "key": "D",
-            "text": "360\u00b0"
+            "text": "360°"
           },
           {
             "key": "E",
@@ -2322,7 +2322,7 @@ export const sets = [
       },
       {
         "n": 29,
-        "q": "1.5 \u00d7 8 =",
+        "q": "What is the value of 1.5 × 8?",
         "options": [
           {
             "key": "A",
@@ -2382,7 +2382,7 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "9 \u00d7 8 =",
+        "q": "What is 9 × 8?",
         "options": [
           {
             "key": "A",
@@ -2408,7 +2408,7 @@ export const sets = [
       },
       {
         "n": 2,
-        "q": "What is 1/4 of 84?",
+        "q": "What is one-fourth of 84?",
         "options": [
           {
             "key": "A",
@@ -2434,7 +2434,7 @@ export const sets = [
       },
       {
         "n": 3,
-        "q": "Which is least?",
+        "q": "Which of these numbers is the least?",
         "options": [
           {
             "key": "A",
@@ -2460,7 +2460,7 @@ export const sets = [
       },
       {
         "n": 4,
-        "q": "Perimeter of an equilateral triangle with side 11?",
+        "q": "What is the perimeter of an equilateral triangle with side length 11?",
         "options": [
           {
             "key": "A",
@@ -2486,7 +2486,7 @@ export const sets = [
       },
       {
         "n": 5,
-        "q": "6\u00b2 \u2212 5\u00b2 =",
+        "q": "What is the value of 6² − 5²?",
         "options": [
           {
             "key": "A",
@@ -2512,7 +2512,7 @@ export const sets = [
       },
       {
         "n": 6,
-        "q": "How many days in 8 weeks?",
+        "q": "How many days are there in 8 weeks?",
         "options": [
           {
             "key": "A",
@@ -2538,7 +2538,7 @@ export const sets = [
       },
       {
         "n": 7,
-        "q": "LCM of 4 and 6?",
+        "q": "What is the least common multiple (LCM) of 4 and 6?",
         "options": [
           {
             "key": "A",
@@ -2564,7 +2564,7 @@ export const sets = [
       },
       {
         "n": 8,
-        "q": "GCF of 18 and 24?",
+        "q": "What is the greatest common factor (GCF) of 18 and 24?",
         "options": [
           {
             "key": "A",
@@ -2590,7 +2590,7 @@ export const sets = [
       },
       {
         "n": 9,
-        "q": "A square has perimeter 36. What is its area?",
+        "q": "A square has a perimeter of 36. What is its area?",
         "options": [
           {
             "key": "A",
@@ -2616,7 +2616,7 @@ export const sets = [
       },
       {
         "n": 10,
-        "q": "10% of 350 =",
+        "q": "What is the value of 10% of 350?",
         "options": [
           {
             "key": "A",
@@ -2668,7 +2668,7 @@ export const sets = [
       },
       {
         "n": 12,
-        "q": "If 2x = 28, x =",
+        "q": "What is the value of If 2x = 28, x?",
         "options": [
           {
             "key": "A",
@@ -2720,7 +2720,7 @@ export const sets = [
       },
       {
         "n": 14,
-        "q": "5/8 + 1/8 =",
+        "q": "What is the value of 5/8 + 1/8?",
         "options": [
           {
             "key": "A",
@@ -2746,7 +2746,7 @@ export const sets = [
       },
       {
         "n": 15,
-        "q": "Median of 3, 9, 5, 7, 11?",
+        "q": "What is the median of 3, 9, 5, 7, and 11?",
         "options": [
           {
             "key": "A",
@@ -2772,7 +2772,7 @@ export const sets = [
       },
       {
         "n": 16,
-        "q": "A spinner is half red, half blue. P(red) =",
+        "q": "What is the value of A spinner is half red, half blue. P(red)?",
         "options": [
           {
             "key": "A",
@@ -2798,7 +2798,7 @@ export const sets = [
       },
       {
         "n": 17,
-        "q": "Pattern: 2, 5, 10, 17, ___ (add consecutive odd numbers starting at +3)",
+        "q": "What is the next number in the pattern 2, 5, 10, 17, ___? (Hint: add consecutive odd numbers starting with +3.)",
         "options": [
           {
             "key": "A",
@@ -2824,7 +2824,7 @@ export const sets = [
       },
       {
         "n": 18,
-        "q": "Volume of a box 3 \u00d7 4 \u00d7 5?",
+        "q": "What is the volume of a box that measures 3 by 4 by 5?",
         "options": [
           {
             "key": "A",
@@ -2850,7 +2850,7 @@ export const sets = [
       },
       {
         "n": 19,
-        "q": "100 \u00f7 4 \u00d7 5 =",
+        "q": "What is the value of 100 ÷ 4 × 5?",
         "options": [
           {
             "key": "A",
@@ -2876,7 +2876,7 @@ export const sets = [
       },
       {
         "n": 20,
-        "q": "Which is composite?",
+        "q": "Which of these numbers is composite?",
         "options": [
           {
             "key": "A",
@@ -2902,7 +2902,7 @@ export const sets = [
       },
       {
         "n": 21,
-        "q": "School ends at 3:20. Bus ride is 35 minutes. Arrive home at?",
+        "q": "School ends at 3:20, and the bus ride home takes 35 minutes. What time do you arrive home?",
         "options": [
           {
             "key": "A",
@@ -2954,7 +2954,7 @@ export const sets = [
       },
       {
         "n": 23,
-        "q": "Mode of 2, 4, 4, 5, 7, 4, 9?",
+        "q": "What is the mode of 2, 4, 4, 5, 7, 4, and 9?",
         "options": [
           {
             "key": "A",
@@ -3006,7 +3006,7 @@ export const sets = [
       },
       {
         "n": 25,
-        "q": "4 notebooks at $2.25 each cost?",
+        "q": "If 4 notebooks cost $2.25 each, what is the total cost?",
         "options": [
           {
             "key": "A",
@@ -3032,7 +3032,7 @@ export const sets = [
       },
       {
         "n": 26,
-        "q": "3\u2074 =",
+        "q": "What is the value of 3⁴?",
         "options": [
           {
             "key": "A",
@@ -3088,19 +3088,19 @@ export const sets = [
         "options": [
           {
             "key": "A",
-            "text": "45\u00b0"
+            "text": "45°"
           },
           {
             "key": "B",
-            "text": "90\u00b0"
+            "text": "90°"
           },
           {
             "key": "C",
-            "text": "180\u00b0"
+            "text": "180°"
           },
           {
             "key": "D",
-            "text": "360\u00b0"
+            "text": "360°"
           },
           {
             "key": "E",
@@ -3110,7 +3110,7 @@ export const sets = [
       },
       {
         "n": 29,
-        "q": "0.25 \u00d7 16 =",
+        "q": "What is the value of 0.25 × 16?",
         "options": [
           {
             "key": "A",
@@ -3170,7 +3170,7 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "12 \u00d7 12 =",
+        "q": "What is 12 × 12?",
         "options": [
           {
             "key": "A",
@@ -3196,7 +3196,7 @@ export const sets = [
       },
       {
         "n": 2,
-        "q": "3/4 of 60 =",
+        "q": "What is the value of 3/4 of 60?",
         "options": [
           {
             "key": "A",
@@ -3248,7 +3248,7 @@ export const sets = [
       },
       {
         "n": 4,
-        "q": "Area of rectangle 12 by 5?",
+        "q": "A rectangle is 12 units long and 5 units wide. What is its area?",
         "options": [
           {
             "key": "A",
@@ -3274,7 +3274,7 @@ export const sets = [
       },
       {
         "n": 5,
-        "q": "7\u00b2 + 1 =",
+        "q": "What is the value of 7² + 1?",
         "options": [
           {
             "key": "A",
@@ -3300,7 +3300,7 @@ export const sets = [
       },
       {
         "n": 6,
-        "q": "Seconds in 4 minutes?",
+        "q": "How many seconds are in 4 minutes?",
         "options": [
           {
             "key": "A",
@@ -3326,7 +3326,7 @@ export const sets = [
       },
       {
         "n": 7,
-        "q": "Multiples of 8 between 20 and 50: how many?",
+        "q": "How many multiples of 8 are there between 20 and 50?",
         "options": [
           {
             "key": "A",
@@ -3352,7 +3352,7 @@ export const sets = [
       },
       {
         "n": 8,
-        "q": "1 \u2212 3/8 =",
+        "q": "What is the value of 1 − 3/8?",
         "options": [
           {
             "key": "A",
@@ -3378,7 +3378,7 @@ export const sets = [
       },
       {
         "n": 9,
-        "q": "Side of a square with area 81?",
+        "q": "What is the side length of a square with area 81?",
         "options": [
           {
             "key": "A",
@@ -3404,7 +3404,7 @@ export const sets = [
       },
       {
         "n": 10,
-        "q": "5% of 80 =",
+        "q": "What is the value of 5% of 80?",
         "options": [
           {
             "key": "A",
@@ -3456,7 +3456,7 @@ export const sets = [
       },
       {
         "n": 12,
-        "q": "If y \u2212 9 = 15, y =",
+        "q": "What is the value of If y − 9 = 15, y?",
         "options": [
           {
             "key": "A",
@@ -3482,7 +3482,7 @@ export const sets = [
       },
       {
         "n": 13,
-        "q": "Edges on a rectangular prism (box)?",
+        "q": "How many edges does a rectangular prism (box) have?",
         "options": [
           {
             "key": "A",
@@ -3508,7 +3508,7 @@ export const sets = [
       },
       {
         "n": 14,
-        "q": "2/3 + 1/6 =",
+        "q": "What is the value of 2/3 + 1/6?",
         "options": [
           {
             "key": "A",
@@ -3534,7 +3534,7 @@ export const sets = [
       },
       {
         "n": 15,
-        "q": "Range of 12, 5, 19, 7, 14?",
+        "q": "What is the range of 12, 5, 19, 7, and 14?",
         "options": [
           {
             "key": "A",
@@ -3560,7 +3560,7 @@ export const sets = [
       },
       {
         "n": 16,
-        "q": "Die fair 1\u20136. P(even) =",
+        "q": "What is the value of Die fair 1–6. P(even)?",
         "options": [
           {
             "key": "A",
@@ -3586,7 +3586,7 @@ export const sets = [
       },
       {
         "n": 17,
-        "q": "Sequence: 81, 27, 9, 3, ___",
+        "q": "What is the next number in the sequence 81, 27, 9, 3, ___?",
         "options": [
           {
             "key": "A",
@@ -3612,7 +3612,7 @@ export const sets = [
       },
       {
         "n": 18,
-        "q": "Volume of cube side 4?",
+        "q": "What is the volume of a cube with side length 4?",
         "options": [
           {
             "key": "A",
@@ -3638,7 +3638,7 @@ export const sets = [
       },
       {
         "n": 19,
-        "q": "3 \u00d7 (8 \u2212 2) =",
+        "q": "What is the value of 3 × (8 − 2)?",
         "options": [
           {
             "key": "A",
@@ -3664,7 +3664,7 @@ export const sets = [
       },
       {
         "n": 20,
-        "q": "Smallest prime greater than 20?",
+        "q": "What is the smallest prime number greater than 20?",
         "options": [
           {
             "key": "A",
@@ -3690,7 +3690,7 @@ export const sets = [
       },
       {
         "n": 21,
-        "q": "Trip starts 9:50 AM, lasts 2 hr 25 min. Ends at?",
+        "q": "A trip starts at 9:50 AM and lasts 2 hours and 25 minutes. What time does it end?",
         "options": [
           {
             "key": "A",
@@ -3716,7 +3716,7 @@ export const sets = [
       },
       {
         "n": 22,
-        "q": "7/10 as a percent?",
+        "q": "What is 7/10 as a percent?",
         "options": [
           {
             "key": "A",
@@ -3742,7 +3742,7 @@ export const sets = [
       },
       {
         "n": 23,
-        "q": "Mean of 10, 10, 14, 16?",
+        "q": "What is the mean (average) of the numbers 10, 10, 14, 16?",
         "options": [
           {
             "key": "A",
@@ -3768,7 +3768,7 @@ export const sets = [
       },
       {
         "n": 24,
-        "q": "Kilograms in 3,500 grams?",
+        "q": "How many kilograms are in 3,500 grams?",
         "options": [
           {
             "key": "A",
@@ -3794,7 +3794,7 @@ export const sets = [
       },
       {
         "n": 25,
-        "q": "Buy 2 items at $6.75 each with $20. Change?",
+        "q": "You buy 2 items that cost $6.75 each and pay with $20. How much change should you receive?",
         "options": [
           {
             "key": "A",
@@ -3820,7 +3820,7 @@ export const sets = [
       },
       {
         "n": 26,
-        "q": "5\u00b3 =",
+        "q": "What is the value of 5³?",
         "options": [
           {
             "key": "A",
@@ -3846,7 +3846,7 @@ export const sets = [
       },
       {
         "n": 27,
-        "q": "Divisible by 3: which?",
+        "q": "Which of these numbers is divisible by 3?",
         "options": [
           {
             "key": "A",
@@ -3872,23 +3872,23 @@ export const sets = [
       },
       {
         "n": 28,
-        "q": "Straight angle =",
+        "q": "What is the value of Straight angle?",
         "options": [
           {
             "key": "A",
-            "text": "90\u00b0"
+            "text": "90°"
           },
           {
             "key": "B",
-            "text": "180\u00b0"
+            "text": "180°"
           },
           {
             "key": "C",
-            "text": "270\u00b0"
+            "text": "270°"
           },
           {
             "key": "D",
-            "text": "360\u00b0"
+            "text": "360°"
           },
           {
             "key": "E",
@@ -3898,7 +3898,7 @@ export const sets = [
       },
       {
         "n": 29,
-        "q": "1.2 \u00d7 5 =",
+        "q": "What is the value of 1.2 × 5?",
         "options": [
           {
             "key": "A",
@@ -3924,7 +3924,7 @@ export const sets = [
       },
       {
         "n": 30,
-        "q": "Coach buys 24 water bottles in packs of 6. How many packs?",
+        "q": "A coach buys 24 water bottles in packs of 6. How many packs does the coach buy?",
         "options": [
           {
             "key": "A",
@@ -3958,7 +3958,7 @@ export const sets = [
     "problems": [
       {
         "n": 1,
-        "q": "15 \u00d7 6 =",
+        "q": "What is 15 × 6?",
         "options": [
           {
             "key": "A",
@@ -3984,7 +3984,7 @@ export const sets = [
       },
       {
         "n": 2,
-        "q": "2/5 of 55 =",
+        "q": "What is the value of 2/5 of 55?",
         "options": [
           {
             "key": "A",
@@ -4036,7 +4036,7 @@ export const sets = [
       },
       {
         "n": 4,
-        "q": "Perimeter of rectangle 15 by 8?",
+        "q": "A rectangle is 15 units long and 8 units wide. What is its perimeter?",
         "options": [
           {
             "key": "A",
@@ -4062,7 +4062,7 @@ export const sets = [
       },
       {
         "n": 5,
-        "q": "10\u00b2 \u2212 6\u00b2 =",
+        "q": "What is the value of 10² − 6²?",
         "options": [
           {
             "key": "A",
@@ -4088,7 +4088,7 @@ export const sets = [
       },
       {
         "n": 6,
-        "q": "Hours in 3 days?",
+        "q": "How many hours are there in 3 days?",
         "options": [
           {
             "key": "A",
@@ -4114,7 +4114,7 @@ export const sets = [
       },
       {
         "n": 7,
-        "q": "LCM of 5 and 10?",
+        "q": "What is the least common multiple (LCM) of 5 and 10?",
         "options": [
           {
             "key": "A",
@@ -4140,7 +4140,7 @@ export const sets = [
       },
       {
         "n": 8,
-        "q": "GCF of 20 and 30?",
+        "q": "What is the greatest common factor (GCF) of 20 and 30?",
         "options": [
           {
             "key": "A",
@@ -4166,7 +4166,7 @@ export const sets = [
       },
       {
         "n": 9,
-        "q": "Triangle sides 5, 12, 13. What kind of triangle (by angles)?",
+        "q": "A triangle has sides of length 5, 12, and 13. What kind of triangle is it when classified by its angles?",
         "options": [
           {
             "key": "A",
@@ -4192,7 +4192,7 @@ export const sets = [
       },
       {
         "n": 10,
-        "q": "25% of 200 =",
+        "q": "What is the value of 25% of 200?",
         "options": [
           {
             "key": "A",
@@ -4244,7 +4244,7 @@ export const sets = [
       },
       {
         "n": 12,
-        "q": "4x = 52. x =",
+        "q": "What is the value of 4x = 52. x?",
         "options": [
           {
             "key": "A",
@@ -4270,7 +4270,7 @@ export const sets = [
       },
       {
         "n": 13,
-        "q": "Faces on a triangular pyramid (tetrahedron)?",
+        "q": "How many faces does a triangular pyramid (tetrahedron) have?",
         "options": [
           {
             "key": "A",
@@ -4296,7 +4296,7 @@ export const sets = [
       },
       {
         "n": 14,
-        "q": "5/6 \u2212 1/3 =",
+        "q": "What is the value of 5/6 − 1/3?",
         "options": [
           {
             "key": "A",
@@ -4322,7 +4322,7 @@ export const sets = [
       },
       {
         "n": 15,
-        "q": "Mean of 5, 10, 15?",
+        "q": "What is the mean (average) of the numbers 5, 10, 15?",
         "options": [
           {
             "key": "A",
@@ -4348,7 +4348,7 @@ export const sets = [
       },
       {
         "n": 16,
-        "q": "Bag: 4 yellow, 6 white. P(white) =",
+        "q": "What is the value of Bag: 4 yellow, 6 white. P(white)?",
         "options": [
           {
             "key": "A",
@@ -4374,7 +4374,7 @@ export const sets = [
       },
       {
         "n": 17,
-        "q": "Pattern: 5, 10, 20, 40, ___",
+        "q": "What is the next number in the pattern 5, 10, 20, 40, ___?",
         "options": [
           {
             "key": "A",
@@ -4400,7 +4400,7 @@ export const sets = [
       },
       {
         "n": 18,
-        "q": "Area of triangle base 10, height 6?",
+        "q": "What is the area of a triangle with base 10 and height 6?",
         "options": [
           {
             "key": "A",
@@ -4426,7 +4426,7 @@ export const sets = [
       },
       {
         "n": 19,
-        "q": "48 \u00f7 6 + 7 =",
+        "q": "What is the value of 48 ÷ 6 + 7?",
         "options": [
           {
             "key": "A",
@@ -4478,7 +4478,7 @@ export const sets = [
       },
       {
         "n": 21,
-        "q": "Clock shows 7:40. What time in 50 minutes?",
+        "q": "A clock shows 7:40. What time will it show in 50 minutes?",
         "options": [
           {
             "key": "A",
@@ -4504,7 +4504,7 @@ export const sets = [
       },
       {
         "n": 22,
-        "q": "9/20 as a decimal?",
+        "q": "What is 9/20 as a decimal?",
         "options": [
           {
             "key": "A",
@@ -4530,7 +4530,7 @@ export const sets = [
       },
       {
         "n": 23,
-        "q": "Median of 2, 8, 3, 8, 5?",
+        "q": "What is the median of 2, 8, 3, 8, and 5?",
         "options": [
           {
             "key": "A",
@@ -4556,7 +4556,7 @@ export const sets = [
       },
       {
         "n": 24,
-        "q": "Liters in 4,000 mL?",
+        "q": "How many liters are in 4,000 milliliters?",
         "options": [
           {
             "key": "A",
@@ -4582,7 +4582,7 @@ export const sets = [
       },
       {
         "n": 25,
-        "q": "6 friends split a $27 bill equally. Each pays?",
+        "q": "Six friends split a $27 bill equally. How much does each friend pay?",
         "options": [
           {
             "key": "A",
@@ -4608,7 +4608,7 @@ export const sets = [
       },
       {
         "n": 26,
-        "q": "2\u2076 =",
+        "q": "What is the value of 2⁶?",
         "options": [
           {
             "key": "A",
@@ -4660,23 +4660,23 @@ export const sets = [
       },
       {
         "n": 28,
-        "q": "Complementary angles add to?",
+        "q": "What do complementary angles add up to?",
         "options": [
           {
             "key": "A",
-            "text": "90\u00b0"
+            "text": "90°"
           },
           {
             "key": "B",
-            "text": "180\u00b0"
+            "text": "180°"
           },
           {
             "key": "C",
-            "text": "270\u00b0"
+            "text": "270°"
           },
           {
             "key": "D",
-            "text": "360\u00b0"
+            "text": "360°"
           },
           {
             "key": "E",
@@ -4686,7 +4686,7 @@ export const sets = [
       },
       {
         "n": 29,
-        "q": "3/4 \u00d7 8 =",
+        "q": "What is the value of 3/4 × 8?",
         "options": [
           {
             "key": "A",
@@ -4712,7 +4712,7 @@ export const sets = [
       },
       {
         "n": 30,
-        "q": "Library: 45 fiction, 30 nonfiction. Fiction is what percent of all books?",
+        "q": "A library has 45 fiction books and 30 nonfiction books. What percent of all the books are fiction?",
         "options": [
           {
             "key": "A",
@@ -4753,7 +4753,7 @@ export const sets = [
           },
           {
             "n": 2,
-            "q": "The sum of three consecutive whole numbers is 78. What is the largest of the three numbers? ---"
+            "q": "The sum of three consecutive whole numbers is 78. What is the largest of the three numbers?"
           }
         ]
       },
@@ -4766,7 +4766,7 @@ export const sets = [
           },
           {
             "n": 4,
-            "q": "Priya ran 2.5 km on Monday, 3 km on Tuesday, and 1.5 km on Wednesday. What was her average (mean) distance per day, in kilometers? ---"
+            "q": "Priya ran 2.5 km on Monday, 3 km on Tuesday, and 1.5 km on Wednesday. What was her average (mean) distance per day, in kilometers?"
           }
         ]
       },
@@ -4779,7 +4779,7 @@ export const sets = [
           },
           {
             "n": 6,
-            "q": "A square and a rectangle have the same perimeter of 40. The rectangle\u2019s length is 14. What is the side length of the square? ---"
+            "q": "A square and a rectangle have the same perimeter of 40. The rectangle’s length is 14. What is the side length of the square?"
           }
         ]
       },
@@ -4813,7 +4813,7 @@ export const sets = [
           },
           {
             "n": 2,
-            "q": "Find the positive difference between 15\u00b2 and 10\u00b2. ---"
+            "q": "Find the positive difference between 15² and 10²."
           }
         ]
       },
@@ -4826,7 +4826,7 @@ export const sets = [
           },
           {
             "n": 4,
-            "q": "The perimeter of a regular hexagon is 54 cm. What is the length of one side, in centimeters? ---"
+            "q": "The perimeter of a regular hexagon is 54 cm. What is the length of one side, in centimeters?"
           }
         ]
       },
@@ -4839,7 +4839,7 @@ export const sets = [
           },
           {
             "n": 6,
-            "q": "A number is tripled, then 7 is added. The result is 40. What was the original number? ---"
+            "q": "A number is tripled, then 7 is added. The result is 40. What was the original number?"
           }
         ]
       },
@@ -4873,7 +4873,7 @@ export const sets = [
           },
           {
             "n": 2,
-            "q": "What is 3/8 of 160? ---"
+            "q": "What is three-eighths of 160?"
           }
         ]
       },
@@ -4886,7 +4886,7 @@ export const sets = [
           },
           {
             "n": 4,
-            "q": "A cube has edges of length 5 cm. What is the volume of the cube, in cubic centimeters? ---"
+            "q": "A cube has edges of length 5 cm. What is the volume of the cube, in cubic centimeters?"
           }
         ]
       },
@@ -4899,7 +4899,7 @@ export const sets = [
           },
           {
             "n": 6,
-            "q": "Two angles of a triangle measure 55\u00b0 and 70\u00b0. What is the measure of the third angle, in degrees? ---"
+            "q": "Two angles of a triangle measure 55° and 70°. What is the measure of the third angle, in degrees?"
           }
         ]
       },
@@ -4933,7 +4933,7 @@ export const sets = [
           },
           {
             "n": 2,
-            "q": "Find 40% of 85. ---"
+            "q": "Find 40% of 85."
           }
         ]
       },
@@ -4946,7 +4946,7 @@ export const sets = [
           },
           {
             "n": 4,
-            "q": "Simplify: (3/4) \u00f7 (1/8) ---"
+            "q": "Simplify: (3/4) ÷ (1/8)"
           }
         ]
       },
@@ -4959,7 +4959,7 @@ export const sets = [
           },
           {
             "n": 6,
-            "q": "A clock shows 2:15. What time will it show in 3 hours and 50 minutes? ---"
+            "q": "A clock shows 2:15. What time will it show in 3 hours and 50 minutes?"
           }
         ]
       },
@@ -4968,7 +4968,7 @@ export const sets = [
         "questions": [
           {
             "n": 7,
-            "q": "The GCF of two numbers is 6. The LCM of the same two numbers is 60. One of the numbers is 12. What is the other number? *(Hint: for two numbers, GCF \u00d7 LCM = product of the numbers.)*"
+            "q": "The GCF of two numbers is 6. The LCM of the same two numbers is 60. One of the numbers is 12. What is the other number? *(Hint: for two numbers, GCF × LCM = product of the numbers.)*"
           },
           {
             "n": 8,

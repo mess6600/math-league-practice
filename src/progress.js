@@ -2,7 +2,7 @@ import { ensureSkills, applySkillResults } from './coach/progressMath.js'
 import { ensureTrackUnlocks, unlockAfterCompletion, enoughWorkForUnlock } from './coach/catalog.js'
 
 const PREFIX = 'mlp:progress:'
-const CONTENT_VERSION = 2 // bump to refresh generated question wording
+const CONTENT_VERSION = 3 // bump to refresh generated question wording
 
 function emptyProgress(username) {
   return {

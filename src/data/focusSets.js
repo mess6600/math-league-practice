@@ -63,7 +63,7 @@ export const focusSets = [
       },
       {
         n: 3,
-        q: 'Which is a prime number?',
+        q: 'Which of these numbers is prime?',
         options: [
           { key: 'A', text: '21' },
           { key: 'B', text: '27' },
@@ -494,7 +494,7 @@ export const focusSets = [
       },
       {
         n: 6,
-        q: 'Which number is a multiple of both 3 and 5?',
+        q: 'Which of these numbers is a multiple of both 3 and 5?',
         options: [
           { key: 'A', text: '10' },
           { key: 'B', text: '12' },

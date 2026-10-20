@@ -262,7 +262,7 @@
       },
       {
         "n": 9,
-        "q": "3/5 of 50",
+        "q": "What is 3/5 of 50?",
         "estimate": false
       },
       {
@@ -438,27 +438,27 @@
     "problems": [
       {
         "n": 1,
-        "q": "10% of 80",
+        "q": "What is 10% of 80?",
         "estimate": false
       },
       {
         "n": 2,
-        "q": "50% of 64",
+        "q": "What is 50% of 64?",
         "estimate": false
       },
       {
         "n": 3,
-        "q": "25% of 200",
+        "q": "What is 25% of 200?",
         "estimate": false
       },
       {
         "n": 4,
-        "q": "20% of 150",
+        "q": "What is 20% of 150?",
         "estimate": false
       },
       {
         "n": 5,
-        "q": "5% of 60",
+        "q": "What is 5% of 60?",
         "estimate": false
       },
       {
@@ -478,7 +478,7 @@
       },
       {
         "n": 9,
-        "q": "75% of 40",
+        "q": "What is 75% of 40?",
         "estimate": false
       },
       {
@@ -488,27 +488,27 @@
       },
       {
         "n": 11,
-        "q": "1% of 500",
+        "q": "What is 1% of 500?",
         "estimate": false
       },
       {
         "n": 12,
-        "q": "100% of 37",
+        "q": "What is 100% of 37?",
         "estimate": false
       },
       {
         "n": 13,
-        "q": "Double 46",
+        "q": "What is double 46?",
         "estimate": false
       },
       {
         "n": 14,
-        "q": "Triple 15",
+        "q": "What is triple 15?",
         "estimate": false
       },
       {
         "n": 15,
-        "q": "Half of 90",
+        "q": "What is half of 90?",
         "estimate": false
       },
       {
@@ -518,12 +518,12 @@
       },
       {
         "n": 17,
-        "q": "40% of 50",
+        "q": "What is 40% of 50?",
         "estimate": false
       },
       {
         "n": 18,
-        "q": "15% of 200",
+        "q": "What is 15% of 200?",
         "estimate": false
       },
       {
@@ -704,7 +704,7 @@
       },
       {
         "n": 11,
-        "q": "15% of 60",
+        "q": "What is 15% of 60?",
         "estimate": false
       },
       {
@@ -872,12 +872,12 @@
       },
       {
         "n": 23,
-        "q": "25% of 80",
+        "q": "What is 25% of 80?",
         "estimate": false
       },
       {
         "n": 24,
-        "q": "10% of 250",
+        "q": "What is 10% of 250?",
         "estimate": false
       },
       {
@@ -922,7 +922,7 @@
       },
       {
         "n": 33,
-        "q": "20% of 90",
+        "q": "What is 20% of 90?",
         "estimate": false
       },
       {
@@ -1080,12 +1080,12 @@
       },
       {
         "n": 23,
-        "q": "50% of 126",
+        "q": "What is 50% of 126?",
         "estimate": false
       },
       {
         "n": 24,
-        "q": "5% of 200",
+        "q": "What is 5% of 200?",
         "estimate": false
       },
       {
@@ -1130,7 +1130,7 @@
       },
       {
         "n": 33,
-        "q": "40% of 75",
+        "q": "What is 40% of 75?",
         "estimate": false
       },
       {
@@ -1288,12 +1288,12 @@
       },
       {
         "n": 23,
-        "q": "75% of 60",
+        "q": "What is 75% of 60?",
         "estimate": false
       },
       {
         "n": 24,
-        "q": "1% of 800",
+        "q": "What is 1% of 800?",
         "estimate": false
       },
       {
@@ -1338,7 +1338,7 @@
       },
       {
         "n": 33,
-        "q": "30% of 70",
+        "q": "What is 30% of 70?",
         "estimate": false
       },
       {
@@ -1496,12 +1496,12 @@
       },
       {
         "n": 23,
-        "q": "20% of 180",
+        "q": "What is 20% of 180?",
         "estimate": false
       },
       {
         "n": 24,
-        "q": "15% of 80",
+        "q": "What is 15% of 80?",
         "estimate": false
       },
       {
@@ -1546,7 +1546,7 @@
       },
       {
         "n": 33,
-        "q": "60% of 90",
+        "q": "What is 60% of 90?",
         "estimate": false
       },
       {
@@ -2036,7 +2036,7 @@
       },
       {
         "n": 18,
-        "q": "Area of a square with side 7?",
+        "q": "What is the area of a square with side length 7?",
         "options": [
           {
             "key": "A",
@@ -2166,7 +2166,7 @@
       },
       {
         "n": 23,
-        "q": "Mean of 4, 8, 10, 6?",
+        "q": "What is the mean of 4, 8, 10, and 6?",
         "options": [
           {
             "key": "A",
@@ -2296,7 +2296,7 @@
       },
       {
         "n": 28,
-        "q": "Angle measures in a triangle add to?",
+        "q": "What do the angle measures in a triangle add up to?",
         "options": [
           {
             "key": "A",
@@ -2460,7 +2460,7 @@
       },
       {
         "n": 4,
-        "q": "Perimeter of an equilateral triangle with side 11?",
+        "q": "What is the perimeter of an equilateral triangle with side length 11?",
         "options": [
           {
             "key": "A",
@@ -2538,7 +2538,7 @@
       },
       {
         "n": 7,
-        "q": "LCM of 4 and 6?",
+        "q": "What is the least common multiple (LCM) of 4 and 6?",
         "options": [
           {
             "key": "A",
@@ -2564,7 +2564,7 @@
       },
       {
         "n": 8,
-        "q": "GCF of 18 and 24?",
+        "q": "What is the greatest common factor (GCF) of 18 and 24?",
         "options": [
           {
             "key": "A",
@@ -2746,7 +2746,7 @@
       },
       {
         "n": 15,
-        "q": "Median of 3, 9, 5, 7, 11?",
+        "q": "What is the median of 3, 9, 5, 7, and 11?",
         "options": [
           {
             "key": "A",
@@ -2798,7 +2798,7 @@
       },
       {
         "n": 17,
-        "q": "Pattern: 2, 5, 10, 17, ___ (add consecutive odd numbers starting at +3)",
+        "q": "What is the next number in the pattern 2, 5, 10, 17, ___? (Hint: add consecutive odd numbers starting with +3.)",
         "options": [
           {
             "key": "A",
@@ -2902,7 +2902,7 @@
       },
       {
         "n": 21,
-        "q": "School ends at 3:20. Bus ride is 35 minutes. Arrive home at?",
+        "q": "School ends at 3:20, and the bus ride home takes 35 minutes. What time do you arrive home?",
         "options": [
           {
             "key": "A",
@@ -2954,7 +2954,7 @@
       },
       {
         "n": 23,
-        "q": "Mode of 2, 4, 4, 5, 7, 4, 9?",
+        "q": "What is the mode of 2, 4, 4, 5, 7, 4, and 9?",
         "options": [
           {
             "key": "A",
@@ -3006,7 +3006,7 @@
       },
       {
         "n": 25,
-        "q": "4 notebooks at $2.25 each cost?",
+        "q": "If 4 notebooks cost $2.25 each, what is the total cost?",
         "options": [
           {
             "key": "A",
@@ -3248,7 +3248,7 @@
       },
       {
         "n": 4,
-        "q": "Area of rectangle 12 by 5?",
+        "q": "What is the area of a rectangle that is 12 by 5?",
         "options": [
           {
             "key": "A",
@@ -3300,7 +3300,7 @@
       },
       {
         "n": 6,
-        "q": "Seconds in 4 minutes?",
+        "q": "How many seconds are in 4 minutes?",
         "options": [
           {
             "key": "A",
@@ -3326,7 +3326,7 @@
       },
       {
         "n": 7,
-        "q": "Multiples of 8 between 20 and 50: how many?",
+        "q": "How many multiples of 8 are there between 20 and 50?",
         "options": [
           {
             "key": "A",
@@ -3482,7 +3482,7 @@
       },
       {
         "n": 13,
-        "q": "Edges on a rectangular prism (box)?",
+        "q": "How many edges does a rectangular prism (box) have?",
         "options": [
           {
             "key": "A",
@@ -3534,7 +3534,7 @@
       },
       {
         "n": 15,
-        "q": "Range of 12, 5, 19, 7, 14?",
+        "q": "What is the range of 12, 5, 19, 7, and 14?",
         "options": [
           {
             "key": "A",
@@ -3586,7 +3586,7 @@
       },
       {
         "n": 17,
-        "q": "Sequence: 81, 27, 9, 3, ___",
+        "q": "What is the next number in the sequence 81, 27, 9, 3, ___?",
         "options": [
           {
             "key": "A",
@@ -3612,7 +3612,7 @@
       },
       {
         "n": 18,
-        "q": "Volume of cube side 4?",
+        "q": "What is the volume of a cube with side length 4?",
         "options": [
           {
             "key": "A",
@@ -3664,7 +3664,7 @@
       },
       {
         "n": 20,
-        "q": "Smallest prime greater than 20?",
+        "q": "What is the smallest prime number greater than 20?",
         "options": [
           {
             "key": "A",
@@ -3690,7 +3690,7 @@
       },
       {
         "n": 21,
-        "q": "Trip starts 9:50 AM, lasts 2 hr 25 min. Ends at?",
+        "q": "A trip starts at 9:50 AM and lasts 2 hours and 25 minutes. What time does it end?",
         "options": [
           {
             "key": "A",
@@ -3716,7 +3716,7 @@
       },
       {
         "n": 22,
-        "q": "7/10 as a percent?",
+        "q": "What is 7/10 as a percent?",
         "options": [
           {
             "key": "A",
@@ -3742,7 +3742,7 @@
       },
       {
         "n": 23,
-        "q": "Mean of 10, 10, 14, 16?",
+        "q": "What is the mean of 10, 10, 14, and 16?",
         "options": [
           {
             "key": "A",
@@ -3768,7 +3768,7 @@
       },
       {
         "n": 24,
-        "q": "Kilograms in 3,500 grams?",
+        "q": "How many kilograms are in 3,500 grams?",
         "options": [
           {
             "key": "A",
@@ -3846,7 +3846,7 @@
       },
       {
         "n": 27,
-        "q": "Divisible by 3: which?",
+        "q": "Which of these numbers is divisible by 3?",
         "options": [
           {
             "key": "A",
@@ -3924,7 +3924,7 @@
       },
       {
         "n": 30,
-        "q": "Coach buys 24 water bottles in packs of 6. How many packs?",
+        "q": "A coach buys 24 water bottles in packs of 6. How many packs does the coach buy?",
         "options": [
           {
             "key": "A",
@@ -4036,7 +4036,7 @@
       },
       {
         "n": 4,
-        "q": "Perimeter of rectangle 15 by 8?",
+        "q": "What is the perimeter of a rectangle that is 15 by 8?",
         "options": [
           {
             "key": "A",
@@ -4114,7 +4114,7 @@
       },
       {
         "n": 7,
-        "q": "LCM of 5 and 10?",
+        "q": "What is the least common multiple (LCM) of 5 and 10?",
         "options": [
           {
             "key": "A",
@@ -4140,7 +4140,7 @@
       },
       {
         "n": 8,
-        "q": "GCF of 20 and 30?",
+        "q": "What is the greatest common factor (GCF) of 20 and 30?",
         "options": [
           {
             "key": "A",
@@ -4166,7 +4166,7 @@
       },
       {
         "n": 9,
-        "q": "Triangle sides 5, 12, 13. What kind of triangle (by angles)?",
+        "q": "A triangle has sides of length 5, 12, and 13. What kind of triangle is it when classified by its angles?",
         "options": [
           {
             "key": "A",
@@ -4270,7 +4270,7 @@
       },
       {
         "n": 13,
-        "q": "Faces on a triangular pyramid (tetrahedron)?",
+        "q": "How many faces does a triangular pyramid (tetrahedron) have?",
         "options": [
           {
             "key": "A",
@@ -4322,7 +4322,7 @@
       },
       {
         "n": 15,
-        "q": "Mean of 5, 10, 15?",
+        "q": "What is the mean of 5, 10, and 15?",
         "options": [
           {
             "key": "A",
@@ -4374,7 +4374,7 @@
       },
       {
         "n": 17,
-        "q": "Pattern: 5, 10, 20, 40, ___",
+        "q": "What is the next number in the pattern 5, 10, 20, 40, ___?",
         "options": [
           {
             "key": "A",
@@ -4400,7 +4400,7 @@
       },
       {
         "n": 18,
-        "q": "Area of triangle base 10, height 6?",
+        "q": "What is the area of a triangle with base 10 and height 6?",
         "options": [
           {
             "key": "A",
@@ -4478,7 +4478,7 @@
       },
       {
         "n": 21,
-        "q": "Clock shows 7:40. What time in 50 minutes?",
+        "q": "A clock shows 7:40. What time will it show in 50 minutes?",
         "options": [
           {
             "key": "A",
@@ -4504,7 +4504,7 @@
       },
       {
         "n": 22,
-        "q": "9/20 as a decimal?",
+        "q": "What is 9/20 as a decimal?",
         "options": [
           {
             "key": "A",
@@ -4530,7 +4530,7 @@
       },
       {
         "n": 23,
-        "q": "Median of 2, 8, 3, 8, 5?",
+        "q": "What is the median of 2, 8, 3, 8, and 5?",
         "options": [
           {
             "key": "A",
@@ -4556,7 +4556,7 @@
       },
       {
         "n": 24,
-        "q": "Liters in 4,000 mL?",
+        "q": "How many liters are in 4,000 milliliters?",
         "options": [
           {
             "key": "A",
@@ -4582,7 +4582,7 @@
       },
       {
         "n": 25,
-        "q": "6 friends split a $27 bill equally. Each pays?",
+        "q": "Six friends split a $27 bill equally. How much does each friend pay?",
         "options": [
           {
             "key": "A",
@@ -4660,7 +4660,7 @@
       },
       {
         "n": 28,
-        "q": "Complementary angles add to?",
+        "q": "What do complementary angles add up to?",
         "options": [
           {
             "key": "A",
@@ -4712,7 +4712,7 @@
       },
       {
         "n": 30,
-        "q": "Library: 45 fiction, 30 nonfiction. Fiction is what percent of all books?",
+        "q": "A library has 45 fiction books and 30 nonfiction books. What percent of all the books are fiction?",
         "options": [
           {
             "key": "A",

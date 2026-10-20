@@ -208,19 +208,21 @@ function Home({ session, progress, onOpen }) {
           </h3>
           <div className="grid" style={{ marginBottom: '1rem' }}>
             {profile.focus.map((f) => (
-              <button
-                key={f.title}
-                type="button"
-                className="set-btn"
-                onClick={() => {
-                  const set = sets.find((x) => x.id === f.sets[0])
-                  if (set) onOpen(set)
-                }}
-              >
-                <div className="kind">Start practice</div>
+              <div key={f.title} className="set-card">
+                <div className="kind">Focus</div>
                 <div className="name">{f.title}</div>
                 <div className="meta">{f.why}</div>
-              </button>
+                <button
+                  type="button"
+                  className="btn btn-primary start-btn"
+                  onClick={() => {
+                    const set = sets.find((x) => x.id === f.sets[0])
+                    if (set) onOpen(set)
+                  }}
+                >
+                  Start
+                </button>
+              </div>
             ))}
           </div>
           <div className="grid">
@@ -389,7 +391,7 @@ function PracticePicker({ onPick, progress, session }) {
               const best = progress.bestBySet?.[s.id]
               const recommended = profile?.recommendedIds?.includes(s.id)
               return (
-                <button key={s.id} type="button" className="set-btn" onClick={() => onPick(s)}>
+                <div key={s.id} className="set-card">
                   <div className="kind">
                     {s.type.replace('-', ' ')}
                     {recommended ? ' · recommended' : ''}
@@ -401,7 +403,14 @@ function PracticePicker({ onPick, progress, session }) {
                     {s.type === 'target' && `${s.pairs.length} pairs`}
                     {best ? ` · best ${best.score}` : ''}
                   </div>
-                </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary start-btn"
+                    onClick={() => onPick(s)}
+                  >
+                    Start
+                  </button>
+                </div>
               )
             })}
           </div>
@@ -736,18 +745,23 @@ function MockContest({ onOpen }) {
         Individual 130+.
       </p>
       <div className="grid">
-        <button type="button" className="set-btn" onClick={() => onOpen(sets.find((s) => s.id === 'ns-3'))}>
-          <div className="kind">Round 1</div>
-          <div className="name">Number Sense Set 3</div>
-        </button>
-        <button type="button" className="set-btn" onClick={() => onOpen(sets.find((s) => s.id === 'sprint-3'))}>
-          <div className="kind">Round 2</div>
-          <div className="name">Sprint Set 3</div>
-        </button>
-        <button type="button" className="set-btn" onClick={() => onOpen(sets.find((s) => s.id === 'target-2'))}>
-          <div className="kind">Round 3</div>
-          <div className="name">Target Set 2</div>
-        </button>
+        {[
+          { id: 'ns-3', kind: 'Round 1', name: 'Number Sense Set 3' },
+          { id: 'sprint-3', kind: 'Round 2', name: 'Sprint Set 3' },
+          { id: 'target-2', kind: 'Round 3', name: 'Target Set 2' },
+        ].map((r) => (
+          <div key={r.id} className="set-card">
+            <div className="kind">{r.kind}</div>
+            <div className="name">{r.name}</div>
+            <button
+              type="button"
+              className="btn btn-primary start-btn"
+              onClick={() => onOpen(sets.find((s) => s.id === r.id))}
+            >
+              Start
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   )

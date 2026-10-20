@@ -145,26 +145,40 @@ export function unlockAfterCompletion(progress, completedSet, username) {
   return { progress, newSet }
 }
 
+/** @returns {boolean} true if foreign / stale unlock data was removed */
 export function ensureTrackUnlocks(progress, username) {
   if (!progress.unlocked) progress.unlocked = {}
   if (!progress.generatedSets) progress.generatedSets = {}
   const mine = tracksForUser(username)
   const mineIds = new Set(mine.map((t) => t.id))
+  let dirty = false
   for (const t of mine) {
-    if (progress.unlocked[t.id] == null) progress.unlocked[t.id] = 1
+    if (progress.unlocked[t.id] == null) {
+      progress.unlocked[t.id] = 1
+      dirty = true
+    }
   }
   // Drop another user's tracks / generated sets left over from the old shared '*' bug
   for (const key of Object.keys(progress.unlocked)) {
-    if (!mineIds.has(key)) delete progress.unlocked[key]
+    if (!mineIds.has(key)) {
+      delete progress.unlocked[key]
+      dirty = true
+    }
   }
   for (const [id, s] of Object.entries(progress.generatedSets)) {
-    if (s?.trackId && !mineIds.has(s.trackId)) delete progress.generatedSets[id]
+    if (s?.trackId && !mineIds.has(s.trackId)) {
+      delete progress.generatedSets[id]
+      dirty = true
+    }
   }
   if (progress.lastUnlock?.setId && !progress.generatedSets[progress.lastUnlock.setId]) {
     const seedOk = mine.some((t) => t.seedSetIds.includes(progress.lastUnlock.setId))
-    if (!seedOk) progress.lastUnlock = null
+    if (!seedOk) {
+      progress.lastUnlock = null
+      dirty = true
+    }
   }
-  return progress
+  return dirty
 }
 
 /**

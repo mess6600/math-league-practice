@@ -1,3 +1,6 @@
+import { ensureSkills, applySkillResults } from './coach/progressMath.js'
+import { ensureTrackUnlocks, unlockAfterCompletion, enoughWorkForUnlock } from './coach/catalog.js'
+
 const PREFIX = 'mlp:progress:'
 
 function emptyProgress(username) {
@@ -6,6 +9,10 @@ function emptyProgress(username) {
     sessions: [],
     bestBySet: {},
     lastActive: null,
+    skills: null,
+    unlocked: {},
+    generatedSets: {},
+    lastUnlock: null,
   }
 }
 
@@ -13,16 +20,29 @@ export function loadProgress(username) {
   if (!username) return emptyProgress('')
   try {
     const raw = localStorage.getItem(PREFIX + username)
-    if (!raw) return emptyProgress(username)
+    if (!raw) {
+      const p = emptyProgress(username)
+      ensureSkills(p, username)
+      ensureTrackUnlocks(p, username)
+      return p
+    }
     const data = JSON.parse(raw)
-    return {
+    const progress = {
       ...emptyProgress(username),
       ...data,
       sessions: Array.isArray(data.sessions) ? data.sessions : [],
       bestBySet: data.bestBySet || {},
+      unlocked: data.unlocked || {},
+      generatedSets: data.generatedSets || {},
     }
+    ensureSkills(progress, username)
+    ensureTrackUnlocks(progress, username)
+    return progress
   } catch {
-    return emptyProgress(username)
+    const p = emptyProgress(username)
+    ensureSkills(p, username)
+    ensureTrackUnlocks(p, username)
+    return p
   }
 }
 
@@ -32,10 +52,13 @@ function saveProgress(username, data) {
 }
 
 /**
- * Record a completed practice attempt for this user.
+ * Record attempt, update skills, and possibly unlock the next generated set.
+ * @returns {{ progress, newSet, unlocked }}
  */
 export function recordAttempt(username, attempt) {
-  const progress = loadProgress(username)
+  let progress = loadProgress(username)
+  ensureSkills(progress, username)
+
   const entry = {
     id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     setId: attempt.setId,
@@ -49,8 +72,7 @@ export function recordAttempt(username, attempt) {
   progress.lastActive = entry.at
 
   const prev = progress.bestBySet[attempt.setId]
-  const higherIsBetter = true
-  if (!prev || (higherIsBetter && attempt.score > prev.score)) {
+  if (!prev || attempt.score > prev.score) {
     progress.bestBySet[attempt.setId] = {
       score: attempt.score,
       detail: entry.detail,
@@ -60,11 +82,33 @@ export function recordAttempt(username, attempt) {
     }
   }
 
-  return saveProgress(username, progress)
+  if (attempt.itemResults?.length) {
+    applySkillResults(progress, attempt.itemResults)
+  }
+
+  let newSet = null
+  if (attempt.setData && attempt.responses && enoughWorkForUnlock(attempt.setData, attempt.responses)) {
+    const result = unlockAfterCompletion(progress, attempt.setData)
+    progress = result.progress
+    newSet = result.newSet
+    if (newSet) {
+      progress.lastUnlock = {
+        setId: newSet.id,
+        title: newSet.title,
+        at: entry.at,
+      }
+    }
+  }
+
+  saveProgress(username, progress)
+  return { progress, newSet }
 }
 
 export function clearProgress(username) {
-  return saveProgress(username, emptyProgress(username))
+  const p = emptyProgress(username)
+  ensureSkills(p, username)
+  ensureTrackUnlocks(p, username)
+  return saveProgress(username, p)
 }
 
 export function progressStats(progress) {
@@ -75,4 +119,9 @@ export function progressStats(progress) {
     setsTried: uniqueSets.size,
     lastActive: progress.lastActive,
   }
+}
+
+export function getGeneratedSet(username, setId) {
+  const p = loadProgress(username)
+  return p.generatedSets?.[setId] || null
 }

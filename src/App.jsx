@@ -1,13 +1,28 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { sets as baseSets } from './data/sets.js'
 import { focusSets } from './data/focusSets.js'
-import { answers } from './data/answers.js'
 import { contestDate } from './data/meta.js'
 import { getProfile } from './data/profiles.js'
 import { getSession, login, logout } from './auth.js'
-import { loadProgress, recordAttempt, progressStats, clearProgress } from './progress.js'
+import { loadProgress, progressStats, clearProgress } from './progress.js'
+import { visibleAdaptiveSets } from './coach/catalog.js'
+import { SKILLS } from './coach/skills.js'
+import { rankedSkills } from './coach/progressMath.js'
+import {
+  NumberSensePractice,
+  SprintPractice,
+  TargetPractice,
+} from './PracticeSession.jsx'
 
 const sets = [...focusSets, ...baseSets]
+
+function resolveSet(setId, progress) {
+  return (
+    progress?.generatedSets?.[setId] ||
+    sets.find((s) => s.id === setId) ||
+    null
+  )
+}
 
 const TABS = [
   { id: 'home', label: 'Home' },
@@ -64,75 +79,6 @@ const SCHEDULE = [
     ],
   },
 ]
-
-function normalize(s) {
-  if (s == null) return ''
-  return String(s)
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, '')
-    .replace(/⅔/g, '2/3')
-    .replace(/⅓/g, '1/3')
-    .replace(/¼/g, '1/4')
-    .replace(/½/g, '1/2')
-    .replace(/¾/g, '3/4')
-    .replace(/⅕/g, '1/5')
-    .replace(/⅜/g, '3/8')
-    .replace(/⅝/g, '5/8')
-    .replace(/⅞/g, '7/8')
-    .replace(/⅚/g, '5/6')
-    .replace(/⅙/g, '1/6')
-    .replace(/⅛/g, '1/8')
-}
-
-function answersMatch(user, correct) {
-  if (!user || !correct) return false
-  const u = normalize(user)
-  const c = normalize(correct)
-  if (u === c) return true
-  const un = Number(u.replace(/\$/g, ''))
-  const cn = Number(c.replace(/\$/g, '').split('(')[0])
-  if (!Number.isNaN(un) && !Number.isNaN(cn) && Math.abs(un - cn) < 0.011) return true
-  if (!Number.isNaN(un) && !Number.isNaN(cn) && cn !== 0) {
-    if (Math.abs(un - cn) / Math.abs(cn) <= 0.05) return true
-  }
-  return false
-}
-
-function useCountdown(seconds, running) {
-  const [left, setLeft] = useState(seconds)
-  useEffect(() => {
-    setLeft(seconds)
-  }, [seconds])
-  useEffect(() => {
-    if (!running) return undefined
-    if (left <= 0) return undefined
-    const t = setInterval(() => setLeft((x) => Math.max(0, x - 1)), 1000)
-    return () => clearInterval(t)
-  }, [running, left])
-  const mm = String(Math.floor(left / 60)).padStart(2, '0')
-  const ss = String(left % 60).padStart(2, '0')
-  return { left, label: `${mm}:${ss}` }
-}
-
-function TimerBadge({ seconds, running }) {
-  const { left, label } = useCountdown(seconds, running)
-  return <div className={`timer ${left <= 60 && running ? 'warn' : ''}`}>{label}</div>
-}
-
-function formatWhen(iso) {
-  if (!iso) return '—'
-  try {
-    return new Date(iso).toLocaleString(undefined, {
-      month: 'short',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: '2-digit',
-    })
-  } catch {
-    return iso
-  }
-}
 
 function LoginScreen({ onLogin }) {
   const [username, setUsername] = useState('')
@@ -237,9 +183,15 @@ function Home({ session, progress, onOpen }) {
               <div className="meta">{stats.setsTried} sets tried</div>
             </div>
           </div>
+          <p className="lead" style={{ marginTop: '1rem', marginBottom: 0 }}>
+            {visibleAdaptiveSets(progress, session.username).coach.message}
+          </p>
         </>
       ) : (
-        <p className="lead">Ready for {contestDate}. Open Practice to begin.</p>
+        <>
+          <p className="lead">Ready for {contestDate}. Open Practice to begin.</p>
+          <p className="lead">{visibleAdaptiveSets(progress, session.username).coach.message}</p>
+        </>
       )}
     </div>
   )
@@ -292,9 +244,22 @@ function ProgressPanel({ session, progress, onRefresh }) {
         {stats.attempts} scored attempts · {stats.setsTried} sets · Last active {formatWhen(stats.lastActive)}
       </p>
 
+      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem' }}>Skill map (coach)</h3>
+      <p className="lead">Weak skills get more practice. Strong skills get light revision.</p>
+      <ul className="skill-list">
+        {rankedSkills(progress).map((s) => (
+          <li key={s.id}>
+            <span>{SKILLS[s.id]?.label || s.id}</span>
+            <span className={`skill-band ${s.band}`}>{s.band}</span>
+            <div className="skill-bar"><div style={{ width: `${s.score}%` }} /></div>
+            <span className="muted">{s.score}</span>
+          </li>
+        ))}
+      </ul>
+
       <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem' }}>Best scores</h3>
       {bests.length === 0 ? (
-        <p className="lead">No scores yet — finish a set and hit Score to save.</p>
+        <p className="lead">No scores yet — finish a set and hit Submit to save.</p>
       ) : (
         <div className="grid" style={{ marginBottom: '1.2rem' }}>
           {bests.map(([setId, b]) => (
@@ -340,390 +305,99 @@ function ProgressPanel({ session, progress, onRefresh }) {
   )
 }
 
+function SetCard({ s, progress, recommended, onPick, badge }) {
+  const best = progress.bestBySet?.[s.id]
+  return (
+    <div className="set-card">
+      <div className="kind">
+        {s.type.replace('-', ' ')}
+        {recommended ? ' · recommended' : ''}
+        {badge ? ` · ${badge}` : ''}
+      </div>
+      <div className="name">{s.title}</div>
+      <div className="meta">
+        {s.type === 'number-sense' && `${s.problems.length} problems`}
+        {s.type === 'sprint' && `${s.problems.length} questions`}
+        {s.type === 'target' && `${s.pairs.length} pairs`}
+        {best ? ` · best ${best.score}` : ''}
+      </div>
+      <button type="button" className="btn btn-primary start-btn" onClick={() => onPick(s)}>
+        Start
+      </button>
+    </div>
+  )
+}
+
 function PracticePicker({ onPick, progress, session }) {
   const profile = getProfile(session.username)
-  const focusGroup = session.username === 'Amrit' ? 'focus-amrit' : session.username === 'Mohit' ? 'focus-mohit' : null
+  const adaptive = useMemo(
+    () => visibleAdaptiveSets(progress, session.username, focusSets),
+    [progress, session.username]
+  )
 
   const groups = useMemo(() => {
-    const g = {
-      focus: [],
-      drill: [],
-      'number-sense': [],
-      sprint: [],
-      target: [],
-    }
-    for (const s of sets) {
-      if (focusGroup && s.group === focusGroup) g.focus.push(s)
-      else if (s.group === 'drill') g.drill.push(s)
-      else if (s.group === 'number-sense') g['number-sense'].push(s)
-      else if (s.group === 'sprint') g.sprint.push(s)
-      else if (s.group === 'target') g.target.push(s)
+    const g = { drill: [], 'number-sense': [], sprint: [], target: [] }
+    for (const s of baseSets) {
+      if (g[s.group]) g[s.group].push(s)
     }
     return g
-  }, [focusGroup])
+  }, [])
 
   const sections = [
-    focusGroup && {
-      key: 'focus',
-      title: `⭐ For you, ${session.displayName} (from last scoresheet)`,
-    },
     { key: 'drill', title: 'Number Sense Drills (8–10 min)' },
     { key: 'number-sense', title: 'Number Sense Sets (10 min)' },
     { key: 'sprint', title: 'Sprint Sets (40 min)' },
     { key: 'target', title: 'Target Sets (6 min × 4 pairs)' },
-  ].filter(Boolean)
+  ]
 
   return (
     <div className="panel">
       <h2>Choose a set</h2>
-      <p className="lead">
-        {profile
-          ? `Start with your starred focus sets — they target what the scoresheet showed.`
-          : `Timers match contest rules. Scores save when you hit Score.`}
-      </p>
+      <p className="lead">{adaptive.coach.message}</p>
+      {progress.lastUnlock && (
+        <div className="unlock-banner" style={{ marginBottom: '1rem' }}>
+          <strong>Recently unlocked:</strong> {progress.lastUnlock.title}
+        </div>
+      )}
+
+      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem' }}>
+        ⭐ For you, {session.displayName}
+      </h3>
+      <div className="grid" style={{ marginBottom: '1.25rem' }}>
+        {adaptive.seeds.map((s) => (
+          <SetCard
+            key={s.id}
+            s={s}
+            progress={progress}
+            recommended={profile?.recommendedIds?.includes(s.id)}
+            onPick={onPick}
+            badge="level 1"
+          />
+        ))}
+        {adaptive.generated.map((s) => (
+          <SetCard
+            key={s.id}
+            s={s}
+            progress={progress}
+            recommended
+            onPick={onPick}
+            badge={`unlocked · L${s.level}`}
+          />
+        ))}
+      </div>
+
       {sections.map((sec) => (
         <div key={sec.key} style={{ marginBottom: '1.25rem' }}>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', margin: '0 0 0.55rem' }}>
             {sec.title}
           </h3>
           <div className="grid">
-            {(groups[sec.key] || []).map((s) => {
-              const best = progress.bestBySet?.[s.id]
-              const recommended = profile?.recommendedIds?.includes(s.id)
-              return (
-                <div key={s.id} className="set-card">
-                  <div className="kind">
-                    {s.type.replace('-', ' ')}
-                    {recommended ? ' · recommended' : ''}
-                  </div>
-                  <div className="name">{s.title}</div>
-                  <div className="meta">
-                    {s.type === 'number-sense' && `${s.problems.length} problems`}
-                    {s.type === 'sprint' && `${s.problems.length} questions`}
-                    {s.type === 'target' && `${s.pairs.length} pairs`}
-                    {best ? ` · best ${best.score}` : ''}
-                  </div>
-                  <button
-                    type="button"
-                    className="btn btn-primary start-btn"
-                    onClick={() => onPick(s)}
-                  >
-                    Start
-                  </button>
-                </div>
-              )
-            })}
+            {(groups[sec.key] || []).map((s) => (
+              <SetCard key={s.id} s={s} progress={progress} onPick={onPick} />
+            ))}
           </div>
         </div>
       ))}
-    </div>
-  )
-}
-
-function NumberSensePractice({ setData, onBack, username, onSaved }) {
-  const seconds = 10 * 60
-  const [running, setRunning] = useState(false)
-  const [responses, setResponses] = useState({})
-  const [scored, setScored] = useState(null)
-  const key = answers[setData.id] || {}
-
-  function score() {
-    let correct = 0
-    let wrong = 0
-    let last = 0
-    for (const p of setData.problems) {
-      const a = responses[p.n]
-      if (a != null && String(a).trim() !== '') last = Math.max(last, p.n)
-    }
-    for (const p of setData.problems) {
-      if (p.n > last) break
-      const a = responses[p.n]
-      if (answersMatch(a, key[p.n])) correct += 1
-      else wrong += 1
-    }
-    const total = 5 * correct - 4 * wrong
-    const detail = `${correct} correct · ${wrong} wrong through #${last}`
-    setScored({ correct, wrong, last, total })
-    recordAttempt(username, {
-      setId: setData.id,
-      title: setData.title,
-      type: setData.type,
-      score: total,
-      detail,
-    })
-    onSaved?.()
-  }
-
-  return (
-    <div className="panel">
-      <div className="toolbar">
-        <button type="button" className="btn btn-ghost" onClick={onBack}>← Back</button>
-        <TimerBadge seconds={seconds} running={running} />
-        <div style={{ display: 'flex', gap: '0.4rem' }}>
-          {!running ? (
-            <button type="button" className="btn btn-primary" onClick={() => setRunning(true)}>Start</button>
-          ) : (
-            <button type="button" className="btn btn-coral" onClick={() => setRunning(false)}>Pause</button>
-          )}
-          <button type="button" className="btn btn-primary" onClick={score}>Score</button>
-        </div>
-      </div>
-      <h2>{setData.title}</h2>
-      <p className="lead">Mental only · +5 correct · −4 wrong/blank through last attempt · estimates within 5%</p>
-      {setData.problems.map((p) => {
-        const marked = scored
-          ? p.n <= scored.last
-            ? answersMatch(responses[p.n], key[p.n])
-              ? 'ok'
-              : 'bad'
-            : null
-          : null
-        return (
-          <div className="problem" key={p.n}>
-            <span className="num">{p.n}.</span>
-            {p.q}
-            {p.estimate && <span className="estimate-tag">estimate</span>}
-            <div className="answer-row">
-              <input
-                type="text"
-                inputMode="decimal"
-                placeholder="Answer"
-                value={responses[p.n] || ''}
-                onChange={(e) => setResponses((r) => ({ ...r, [p.n]: e.target.value }))}
-              />
-              {marked === 'ok' && <span className="mark-ok">✓ {key[p.n]}</span>}
-              {marked === 'bad' && <span className="mark-bad">✗ {key[p.n]}</span>}
-            </div>
-          </div>
-        )
-      })}
-      <div className="submit-bar">
-        <button type="button" className="btn btn-primary submit-btn" onClick={score}>
-          Submit
-        </button>
-        <span className="submit-hint">Scores your answers and saves to your progress</span>
-      </div>
-      {scored && (
-        <div className="score-banner">
-          <strong>Score: {scored.total}</strong>
-          <div>
-            {scored.correct} correct · {scored.wrong} wrong/blank through #{scored.last}
-            {' '}· saved to your progress
-          </div>
-        </div>
-      )}
-    </div>
-  )
-}
-
-function SprintPractice({ setData, onBack, username, onSaved }) {
-  const [running, setRunning] = useState(false)
-  const [responses, setResponses] = useState({})
-  const [scored, setScored] = useState(null)
-  const key = answers[setData.id] || {}
-
-  function score() {
-    let correct = 0
-    let wrong = 0
-    let skipped = 0
-    for (const p of setData.problems) {
-      const a = responses[p.n]
-      if (!a) {
-        skipped += 1
-        continue
-      }
-      if (a === key[p.n]) correct += 1
-      else wrong += 1
-    }
-    const total = 4 * correct - wrong
-    const detail = `${correct} correct · ${wrong} wrong · ${skipped} skipped`
-    setScored({ correct, wrong, skipped, total })
-    recordAttempt(username, {
-      setId: setData.id,
-      title: setData.title,
-      type: setData.type,
-      score: total,
-      detail,
-    })
-    onSaved?.()
-  }
-
-  return (
-    <div className="panel">
-      <div className="toolbar">
-        <button type="button" className="btn btn-ghost" onClick={onBack}>← Back</button>
-        <TimerBadge seconds={40 * 60} running={running} />
-        <div style={{ display: 'flex', gap: '0.4rem' }}>
-          {!running ? (
-            <button type="button" className="btn btn-primary" onClick={() => setRunning(true)}>Start</button>
-          ) : (
-            <button type="button" className="btn btn-coral" onClick={() => setRunning(false)}>Pause</button>
-          )}
-          <button type="button" className="btn btn-primary" onClick={score}>Score</button>
-        </div>
-      </div>
-      <h2>{setData.title}</h2>
-      <p className="lead">No calculator · +4 correct · −1 wrong · skip free · NOTA = none of the above</p>
-      {setData.problems.map((p) => {
-        const marked = scored && responses[p.n]
-          ? responses[p.n] === key[p.n]
-            ? 'ok'
-            : 'bad'
-          : null
-        return (
-          <div className="problem" key={p.n}>
-            <span className="num">{p.n}.</span>
-            {p.q}
-            <div className="choices">
-              {p.options.map((o) => {
-                let cls = 'choice'
-                if (responses[p.n] === o.key) cls += ' selected'
-                if (scored) {
-                  if (o.key === key[p.n]) cls += ' correct'
-                  else if (responses[p.n] === o.key && o.key !== key[p.n]) cls += ' wrong'
-                }
-                return (
-                  <button
-                    key={o.key}
-                    type="button"
-                    className={cls}
-                    onClick={() =>
-                      setResponses((r) => ({
-                        ...r,
-                        [p.n]: r[p.n] === o.key ? undefined : o.key,
-                      }))
-                    }
-                  >
-                    {o.key}) {o.text}
-                  </button>
-                )
-              })}
-            </div>
-            {marked === 'ok' && <div className="mark-ok">✓</div>}
-            {marked === 'bad' && <div className="mark-bad">Correct: {key[p.n]}</div>}
-            {scored && !responses[p.n] && (
-              <div style={{ color: 'var(--ink-soft)', marginTop: 6 }}>Skipped · answer {key[p.n]}</div>
-            )}
-          </div>
-        )
-      })}
-      <div className="submit-bar">
-        <button type="button" className="btn btn-primary submit-btn" onClick={score}>
-          Submit
-        </button>
-        <span className="submit-hint">Scores your answers and saves to your progress</span>
-      </div>
-      {scored && (
-        <div className="score-banner">
-          <strong>Score: {scored.total}</strong>
-          <div>
-            {scored.correct} correct · {scored.wrong} wrong · {scored.skipped} skipped · saved
-          </div>
-        </div>
-      )}
-    </div>
-  )
-}
-
-function TargetPractice({ setData, onBack, username, onSaved }) {
-  const [pairIndex, setPairIndex] = useState(0)
-  const [running, setRunning] = useState(false)
-  const [responses, setResponses] = useState({})
-  const [scored, setScored] = useState(null)
-  const key = answers[setData.id] || {}
-  const pair = setData.pairs[pairIndex]
-
-  function score() {
-    let correct = 0
-    for (const p of setData.pairs) {
-      for (const q of p.questions) {
-        if (answersMatch(responses[q.n], key[q.n])) correct += 1
-      }
-    }
-    const total = correct * 10
-    setScored({ correct, total })
-    recordAttempt(username, {
-      setId: setData.id,
-      title: setData.title,
-      type: setData.type,
-      score: total,
-      detail: `${correct} / 8 correct`,
-    })
-    onSaved?.()
-  }
-
-  return (
-    <div className="panel">
-      <div className="toolbar">
-        <button type="button" className="btn btn-ghost" onClick={onBack}>← Back</button>
-        <TimerBadge seconds={6 * 60} running={running} key={pairIndex} />
-        <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
-          {!running ? (
-            <button type="button" className="btn btn-primary" onClick={() => setRunning(true)}>Start pair</button>
-          ) : (
-            <button type="button" className="btn btn-coral" onClick={() => setRunning(false)}>Pause</button>
-          )}
-          <button
-            type="button"
-            className="btn btn-ghost"
-            disabled={pairIndex === 0}
-            onClick={() => {
-              setPairIndex((i) => i - 1)
-              setRunning(false)
-            }}
-          >
-            Prev pair
-          </button>
-          <button
-            type="button"
-            className="btn btn-ghost"
-            disabled={pairIndex >= setData.pairs.length - 1}
-            onClick={() => {
-              setPairIndex((i) => i + 1)
-              setRunning(false)
-            }}
-          >
-            Next pair
-          </button>
-          <button type="button" className="btn btn-primary" onClick={score}>Score all</button>
-        </div>
-      </div>
-      <h2>{setData.title}</h2>
-      <p className="lead">Calculator OK · 6 minutes per pair · +10 each · no penalty</p>
-      <div className="pair-box">
-        <h3>Pair {pair.pair} of {setData.pairs.length}</h3>
-        {pair.questions.map((q) => (
-          <div className="problem" key={q.n}>
-            <span className="num">{q.n}.</span>
-            {q.q}
-            <div className="answer-row">
-              <input
-                type="text"
-                value={responses[q.n] || ''}
-                onChange={(e) => setResponses((r) => ({ ...r, [q.n]: e.target.value }))}
-                placeholder="Answer"
-              />
-              {scored && (
-                answersMatch(responses[q.n], key[q.n])
-                  ? <span className="mark-ok">✓ {key[q.n]}</span>
-                  : <span className="mark-bad">✗ {key[q.n]}</span>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="submit-bar">
-        <button type="button" className="btn btn-primary submit-btn" onClick={score}>
-          Submit
-        </button>
-        <span className="submit-hint">Scores all pairs and saves to your progress</span>
-      </div>
-      {scored && (
-        <div className="score-banner">
-          <strong>Score: {scored.total}</strong>
-          <div>{scored.correct} / 8 correct · saved</div>
-        </div>
-      )}
     </div>
   )
 }
@@ -861,6 +535,7 @@ export default function App() {
           onBack={() => setActive(null)}
           username={session.username}
           onSaved={refreshProgress}
+          onStartUnlocked={(s) => openSet(s)}
         />
       )}
       {active?.type === 'sprint' && (
@@ -869,6 +544,7 @@ export default function App() {
           onBack={() => setActive(null)}
           username={session.username}
           onSaved={refreshProgress}
+          onStartUnlocked={(s) => openSet(s)}
         />
       )}
       {active?.type === 'target' && (
@@ -877,12 +553,13 @@ export default function App() {
           onBack={() => setActive(null)}
           username={session.username}
           onSaved={refreshProgress}
+          onStartUnlocked={(s) => openSet(s)}
         />
       )}
 
       <p className="footnote">
         Original practice for family use. Not affiliated with mathleague.org.
-        Progress is stored per student on this browser/device.
+        Coach adapts to each student · progress saved on this device.
       </p>
     </div>
   )

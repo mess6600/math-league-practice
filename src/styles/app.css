@@ -437,6 +437,85 @@ button, input {
   font-size: 1.15rem;
 }
 
+.explain-box {
+  margin-top: 0.55rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  background: rgba(196, 92, 38, 0.1);
+  border: 1px solid rgba(196, 92, 38, 0.22);
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.problem-wrong {
+  background: rgba(163, 59, 44, 0.06);
+  margin: 0 -0.4rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  border-radius: 10px;
+}
+
+.problem-right {
+  background: rgba(31, 122, 77, 0.06);
+  margin: 0 -0.4rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  border-radius: 10px;
+}
+
+.unlock-banner {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  background: linear-gradient(120deg, rgba(201, 162, 39, 0.2), rgba(15, 107, 92, 0.12));
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 0.55rem;
+}
+
+.skill-list {
+  list-style: none;
+  margin: 0 0 1.2rem;
+  padding: 0;
+}
+
+.skill-list li {
+  display: grid;
+  grid-template-columns: 1.4fr auto 1fr auto;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 0.9rem;
+}
+
+.skill-band {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+}
+
+.skill-band.weak { background: rgba(163, 59, 44, 0.15); color: var(--bad); }
+.skill-band.building { background: rgba(201, 162, 39, 0.2); color: #8a6a10; }
+.skill-band.strong { background: rgba(31, 122, 77, 0.15); color: var(--ok); }
+
+.skill-bar {
+  height: 8px;
+  border-radius: 99px;
+  background: rgba(26, 46, 40, 0.08);
+  overflow: hidden;
+}
+
+.skill-bar > div {
+  height: 100%;
+  background: var(--teal);
+  border-radius: 99px;
+}
+
 .submit-bar {
   display: flex;
   flex-wrap: wrap;
